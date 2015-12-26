@@ -1,102 +1,109 @@
 <!doctype html>
 <html lang="en">
+
 <head>
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="">
 
-    <title>@yield('title')</title>
+  <title>@yield('title')</title>
 
-    <!-- Bootstrap Core CSS -->
-    <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
+  <!-- Bootstrap Core CSS -->
+  <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
 
-    <!-- Custom CSS -->
-    <link href="{{ asset('css/custom.css') }}" rel="stylesheet" type="text/css">
+  <!-- Custom CSS -->
+  <link href="{{ asset('css/custom.css') }}" rel="stylesheet" type="text/css">
 
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
 
-   <span style ="color:red;">stronzo</span>
 
 </head>
-<body>
 
-   <nav class="navbar navbar-default navbar-fixed-top topnav" role="navigation">
-        <div class="container topnav">
-            <!-- Brand and toggle get grouped for better mobile display -->
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class="navbar-brand topnav" href="#">Start Bootstrap</a>
-            </div>
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+  <div class="container">
 
-                @yield ('nav')
-                <!--<ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <a href="#about">AAAAAAAAAA</a>
-                    </li>
-                    <li>
-                        <a href="#services">Services</a>
-                    </li>
-                    <li>
-                        <a href="#contact">Contact</a>
-                    </li>
-                </ul>-->
-            </div>
-            <!-- /.navbar-collapse -->
-        </div>
-        <!-- /.container -->
+
+    <!--navbar-->
+<div class="container-fluid member">
+  <div class="">
+    {!! Html::image('img/cart3.png') !!}
+  </div>
+</div>
+    <nav class="navbar">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#barra">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">LUKA</a>
+      </div>
+
+      <div class="navbar-collapse" id="barra">
+        @yield ('nav')
+
+      </div>
     </nav>
 
 
-     <div class="container">
-         <div class="wrap">
-            @yield('content')
-            </div>
+    @yield('content')
+
+    <div class=" allblackeverything">
+      <div class="row">
+        <div class="col-md-6">
+          <ul class="list-group vmen">
+            <li class="list-group-item"> <a href="#">Home</a></li>
+            <li class="list-group-item"><a href="#">Shop</a></li>
+            <li class="list-group-item"><a href="#">Care</a></li>
+            <li class="list-group-item"><a href="#">About</a></li>
+            <li class="list-group-item"><a href="#">Contact</a></li>
+            <li class="list-group-item"><a href="#">Privacy</a></li>
+          </ul>
         </div>
+        <div class="col-md-4">
+          <h3>Contact us</h3>
 
+          {!! Form::open(array('url'=>'contactform')) !!}
 
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <ul class="list-inline">
-                        <li>
-                            <a href="#">Home</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
+          <div class="form-group formgroup">
+            {!! Form::label('email','Email') !!}
+            {!! Form::text('email', null,array('class' => 'form-control')) !!}
+          </div>
 
-                        <li>
-                            <a href="#about">About</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li>
-                            <a href="#services">Services</a>
-                        </li>
-                        <li class="footer-menu-divider">&sdot;</li>
-                        <li>
-                            <a href="#contact">Contact</a>
-                        </li>
-                    </ul>
-                    <p class="copyright text-muted small">Copyright &copy; Your Company 2014. All Rights Reserved</p>
-                </div>
-            </div>
+          <div class="form-group formgroup">
+            {!! Form::label('textarea','Message') !!}
+            {!! Form::text('message', null, array('class' => 'form-control', 'rows' => 100, 'cols' => 40)) !!}
+          </div>
+
+          <div class="form-group formgroup">
+            {!! Form::submit('Submit', ['class' => 'btn btn-primary form-control']) !!}
+          </div>
+          {!! Form::close() !!}
         </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="list-inline">
+        <p class="copyright text-muted small">Copyright &copy; Your Company 2014. All Rights Reserved</p>
+      </div>
+    </div>
 
 
-    <!-- jQuery -->
-    <script type="text/javascript" src="{{ URL::asset('js/jquery.js') }}"></script>
 
-    <!-- Bootstrap Core JavaScript -->
+  </div>
 
-    <script type="text/javascript" src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
+
+
+  <!-- jQuery -->
+  <script type="text/javascript" src="{{ URL::asset('js/jquery.js') }}"></script>
+
+  <!-- Bootstrap Core JavaScript -->
+  <script type="text/javascript" src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
 
 </body>
+
 </html>

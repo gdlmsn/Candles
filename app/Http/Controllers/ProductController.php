@@ -3,11 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\User;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class UsersController extends Controller
+class ProductController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,8 +16,14 @@ class UsersController extends Controller
      */
     public function index()
     {
-        //
+        return view ('pages.products');
     }
+
+    public function details()
+    {
+        return view ('pages.productdetails');
+    }
+
 
     /**
      * Show the form for creating a new resource.
@@ -83,9 +89,5 @@ class UsersController extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function login(){
-      return view('users.login');
     }
 }

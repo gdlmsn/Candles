@@ -8,7 +8,10 @@
         "php": ">=5.5.9",
         "laravel/framework": "5.1.*",
         "laravelcollective/html": "5.1.*",
-        "way/generators": "~3.0"
+        "way/generators": "~3.0",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "paypal/rest-api-sdk-php" : "0.5.*"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",

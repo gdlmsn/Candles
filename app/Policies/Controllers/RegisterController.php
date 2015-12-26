@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\View;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -16,6 +16,6 @@ class RegisterController extends Controller
     $text ['useregistration'] = 'New User Registration';
 
 
-    return view ('pages.register',  $text);
+    return view ('pages.register', $text);
   }
 }

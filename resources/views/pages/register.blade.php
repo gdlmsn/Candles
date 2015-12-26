@@ -1,18 +1,12 @@
 @extends('app')
 
     @section('nav')
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="#home_sec">Home</a></li>
+      <li><a href="#shop_sec">Shop</a></li>
+      <li><a href="#care_sec">Care</a></li>
+      <li><a href="#about_sec">About</a></li>
 
-        <ul class="nav navbar-nav navbar-right">
-            <li>
-                <a href="#about">AAAAAAAAAA</a>
-            </li>
-            <li>
-                <a href="#services">Services</a>
-            </li>
-            <li>
-                <a href="#contact">Contact</a>
-            </li>
-        </ul>
 
     @stop
 
@@ -22,7 +16,10 @@
         <div class="highlight">{{ $useregistration }}</div>
 
         <hr/>
+        <div class="container-fluid">
 
+          <div class="row">
+            <div class="col-md-4">
 
         {!! Form::open(array('url'=>'regform')) !!}
 
@@ -45,6 +42,9 @@
             {!! Form::submit('Sign up', ['class' => 'btn btn-primary form-control']) !!}
             </div>
 
-
         {!! Form::close() !!}
+
+        </div>
+      </div>
+    </div>
     @stop

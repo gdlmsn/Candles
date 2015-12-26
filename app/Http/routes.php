@@ -17,7 +17,6 @@ Route::get('/', function () {
 
 Route::get('register', 'RegisterController@showRegister');
 
-
 Route::post('/register', function(){
    $user = new User;
    $user->email = Input::get('email');
@@ -26,5 +25,10 @@ Route::post('/register', function(){
    $user->save();
 });
 
-
 Route::get('login', array('as' => 'login', 'uses' => 'UsersController@login'));
+
+Route::get('about', 'PagesController@about');
+
+Route::get('products', 'ProductController@index');
+
+Route::get('productdetails', 'ProductController@details');

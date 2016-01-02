@@ -21,7 +21,7 @@
           <div class="row">
             <div class="col-md-4">
 
-        {!! Form::open(array('url'=>'regform')) !!}
+        {!! Form::open(array('url'=>'registered')) !!}
 
             <div class="form-group">
             {!! Form::label('email','Email Address') !!}

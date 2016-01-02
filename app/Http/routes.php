@@ -17,18 +17,26 @@ Route::get('/', function () {
 
 Route::get('register', 'RegisterController@showRegister');
 
+
+/*
 Route::post('/register', function(){
    $user = new User;
    $user->email = Input::get('email');
    $user->username = Input::get('username');
    $user->password = Hash::make(Input::get('password'));
    $user->save();
+   $theEmail = Input::get('email');
+   return View::make('thanks')->with('theEmail', $theEmail);
 });
+*/
 
-Route::get('login', array('as' => 'login', 'uses' => 'UsersController@login'));
+Route::get('login', array('as' => 'login', 'users' => 'UsersController@login'));
+
 
 Route::get('about', 'PagesController@about');
 
 Route::get('products', 'ProductController@index');
+
+Route::get('products/{id}', 'ProductController@show');
 
 Route::get('productdetails', 'ProductController@details');

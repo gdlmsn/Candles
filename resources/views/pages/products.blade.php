@@ -12,7 +12,35 @@
     @stop
 
     @section('content')
-<div class="container-fluid">
+    <h1>Products</h1>
+    <ul>
+
+
+    @foreach($products as $products)
+    <article>
+    <div class="container-fluid">
+        <div class="bs-example" data-example-id="thumbnails-with-custom-content">
+           <div class="row">
+             <div class="col-xs-4 col-sm-4 col-md-4">
+               <div class="thumbnail th1">
+                 <a href="{{ action("ProductController@index") }}">
+                   {!! Html::image('img/01-main1.png') !!}
+                  <div class="caption">
+                    <h4>{{ $products->p_name }}</h4>
+                    <hr/>
+                    <p>{{ $products->p_price}}  $</p>
+                    </a>
+                  </div>
+              </div>
+            </div>
+          </div>
+          </div>
+          </div>
+    </article>
+    @endforeach
+
+      </ul>
+<!--<div class="container-fluid">
   <div class="bs-example" data-example-id="thumbnails-with-custom-content">
      <div class="row">
        <div class="col-xs-4 col-sm-4 col-md-4">
@@ -147,5 +175,5 @@
   </div>
 
 </div>
-
+-->
     @stop

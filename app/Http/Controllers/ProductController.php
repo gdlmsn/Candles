@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use Illuminate\Http\Request;
-
+use app\Product;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -16,7 +17,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return view ('pages.products');
+      $products = DB::table('products')->get();
+      return view ('pages.products', ['products' => $products]);
     }
 
     public function details()
@@ -52,9 +54,13 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+     //CREATE PRODUCT
     public function show($id)
     {
-        //
+        $products = \App\Product::find($id);
+
+        return $products;
     }
 
     /**

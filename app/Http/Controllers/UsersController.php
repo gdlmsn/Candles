@@ -7,6 +7,7 @@ use App\User;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
+
 class UsersController extends Controller
 {
     /**
@@ -26,7 +27,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        //
+    //
     }
 
     /**
@@ -37,7 +38,7 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      //
     }
 
     /**

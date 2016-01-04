@@ -30,13 +30,17 @@ Route::post('/register', function(){
 });
 */
 
-Route::get('login', array('as' => 'login', 'users' => 'UsersController@login'));
+Route::get('login', array('as' => 'login', 'uses' => 'UsersController@login'));
 
 
 Route::get('about', 'PagesController@about');
 
 Route::get('products', 'ProductController@index');
 
+//Route::get('products', 'ProductController@display');
+
 Route::get('products/{id}', 'ProductController@show');
 
-Route::get('productdetails', 'ProductController@details');
+//Route::get('products/{id}', array('as' =>'productdetails', 'uses' => 'ProductController@show'));
+
+//Route::get('productdetails', 'ProductController@details');

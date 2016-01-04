@@ -59,26 +59,20 @@
       <!--Description-------------->
       <div class="col-md-6">
         <div class="container-fluid description">
-          <h3>Small Coconut & Soy Candle</h3>
-          <h4>23 $</h4>
+          <h3>{{ $product->name }}</h3>
+          <h4>{{ $product->price }} $</h4>
           <hr/>
-          <p>  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id ipsum magna.
-             Proin egestas dolor a sapien convallis luctus vitae at magna.
-             Nullam tortor dui, sollicitudin eget viverra id, pretium sed nisl.
-             Cras tristique id ante in tristique.</p>
+          <p>  {{ $product->description }}</p>
           <h5>
-            Fusce ac lectus condimentum dui consectetur scelerisque.
+
           </h5>
 
           <h4>Fragrances</h4>
           <select class="form-control">
-          <option>Lavander</option>
-          <option>Flavour</option>
-          <option>Flavour</option>
-          <option>Flavour</option>
-          <option>Flavour</option>
-          <option>Flavour</option>
+
+          <option></option>
           </select>
+
 
           <div class="row">
             <div class="col-md-2">

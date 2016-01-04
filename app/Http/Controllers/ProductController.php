@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use DB;
 use Illuminate\Http\Request;
-use app\Product;
+use App\Fragrance;
+use App\Product;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -17,24 +18,34 @@ class ProductController extends Controller
      */
     public function index()
     {
-      $products = DB::table('products')->get();
-      return view ('pages.products', ['products' => $products]);
+    //  $products = DB::table('products')->get();
+    //  return view ('pages.products', ['products' => $products]);
+    $products = Product::all();
+    return view('products.index', compact('products'));
     }
 
-    public function details()
+  /*  public function details()
     {
-        return view ('pages.productdetails');
+       return view ('pages.productdetails');
     }
-
+    */
 
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
+
+  /*   public function display(){
+
+       $fragrances = Fragrance::all();
+       return view('products.show', compact('fragrances'));
+     }
+ */
+
     public function create()
     {
-        //
+      //
     }
 
     /**
@@ -58,9 +69,14 @@ class ProductController extends Controller
      //CREATE PRODUCT
     public function show($id)
     {
-        $products = \App\Product::find($id);
+    // $products = DB::table('products')->where('id','=',$id);
+    //  return view ('pages.productdetails',[ 'productdetails' => $productz]);
+      $product = Product::findOrFail($id);
 
-        return $products;
+      //dd returns null in case there is no product under that id or returns the product details otherwise.
+      //dd($product);
+
+      return view('products.show', compact('product'));
     }
 
     /**

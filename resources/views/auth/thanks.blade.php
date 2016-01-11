@@ -22,7 +22,7 @@
             <div class="col-md-4">
               <h2>thanks for registering</h2>
               <p>
-                You've registered {{ theEmail }}.
+                You've registered {{ $theUsername }}.
               </p>
         </div>
       </div>

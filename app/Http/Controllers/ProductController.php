@@ -36,12 +36,15 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-  /*   public function display(){
 
-       $fragrances = Fragrance::all();
-       return view('products.show', compact('fragrances'));
+      //**********************DISPLAY ALL FRAGRANCES IN show.blade.php************************************
+
+    public function display(){
+
+       $pt = Fragrance::all();
+       return view('products.show', compact('pt'));
      }
- */
+
 
     public function create()
     {

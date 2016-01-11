@@ -2,11 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+
+
+use Input;
+use Hash;
+use Auth;
 use App\User;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
+use Illuminate\Http\Request;
+use Validator;
+use Redirect;
 
 class UsersController extends Controller
 {
@@ -36,10 +42,7 @@ class UsersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-      //
-    }
+
 
     /**
      * Display the specified resource.
@@ -47,6 +50,17 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    /* public function authenticate()
+    {
+        if (Auth::attempt(['email' => $user->email, 'password' => $user->password])) {
+          $theEmail = Input::get('email');
+            return redirect()->intended('logged', compact('theEmail'));
+    }
+    }
+
+*/
+
     public function show($id)
     {
         //
@@ -86,7 +100,6 @@ class UsersController extends Controller
         //
     }
 
-    public function login(){
-      return view('users.login');
-    }
+
+
 }

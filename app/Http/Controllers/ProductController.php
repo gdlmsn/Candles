@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Input;
 use DB;
 use Illuminate\Http\Request;
 use App\Fragrance;
@@ -48,7 +48,7 @@ class ProductController extends Controller
 
     public function create()
     {
-      //
+      return view('products.create');
     }
 
     /**
@@ -59,8 +59,18 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      $product = new Product;
+      $product->name = Input::get('name');
+      $product->stock = Input::get('stock');
+      $product->price = Input::get('price');
+      $product->special_price = Input::get('special_price');
+      $product->weight = Input::get('weight');
+      $product->size = Input::get('size');
+      $product->description = Input::get('description');
+      $product->save();
+      return redirect ('products');
     }
+
 
     /**
      * Display the specified resource.

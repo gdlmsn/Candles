@@ -40,9 +40,15 @@ Route::get('about', 'PagesController@about');
 
 Route::get('products', 'ProductController@index');
 
-//Route::get('products.show', 'ProductDetailsController@index');
+Route::get('products/create', 'ProductController@create');
 
 Route::get('products/{id}', 'ProductController@show');
+
+Route::post('products', 'ProductController@store');
+
+
+
+//Route::get('products.show', 'ProductDetailsController@index');
 
 //Route::get('products/{id}', array('as' =>'productdetails', 'uses' => 'ProductController@show'));
 

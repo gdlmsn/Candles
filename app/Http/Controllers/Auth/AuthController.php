@@ -88,16 +88,11 @@ class AuthController extends Controller
     }
 
 
-    /**
-    *Get Login Page
-    */
+
     public function getLogin(){
       return view('auth.login');
     }
 
-    /**
-    *Log user in  Page
-    */
 
 
     public function postLogin(Request $request){
@@ -107,7 +102,7 @@ class AuthController extends Controller
         ]);
 
         $credentials = $request->only('email', 'password');
-        //$theUser = Input::get('email');
+      //  $theUser = Input::get('email');
 
         if ($this->auth->attempt($credentials, $request->has('remember'))) {
            // Authentication passed...
@@ -119,5 +114,14 @@ class AuthController extends Controller
       'email' => 'These Credentials do not match our records'
     ]);
   }
+
+
+
+
+
+
+
+
+
 
 }

@@ -35,9 +35,17 @@
             </div>
             {!! Form::close() !!}
 
-          <div class="non-member">
-        <a href="{{ action("Auth\AuthController@getRegister") }}">Not a member? Sign-up!</a>
-          </div>
+            @if ($errors->any())
+            <ul class="alert alert-danger">
+              @foreach ($errors->all() as $error)
+              <li>{{ $error }}</li>
+              @endforeach
+            </ul>
+            @endif
+          </hr>
+            <div class="non-member">
+            <a href="{{ action("Auth\AuthController@getRegister") }}">Not a member? Sign-up!</a>
+            </div>
         </div>
       </div>
     </div>

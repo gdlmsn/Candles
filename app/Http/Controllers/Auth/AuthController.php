@@ -78,6 +78,12 @@ class AuthController extends Controller
     */
     public function postRegister(Request $request)
     {
+        $this->validate($request, [
+          'username' => 'required|min:3',
+          'email' =>'required',
+          'password'=>'required'
+        ]);
+
         $user = new User;
         $user->username = Input::get('username');
         $user->email = Input::get('email');
@@ -98,7 +104,8 @@ class AuthController extends Controller
     public function postLogin(Request $request){
 
         $this->validate($request, [
-          'email' => 'required', 'password' => 'required',
+          'email' => 'required',
+          'password' => 'required',
         ]);
 
         $credentials = $request->only('email', 'password');

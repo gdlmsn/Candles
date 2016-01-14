@@ -7,7 +7,9 @@
       <li><a href="#care_sec">Care</a></li>
       <li><a href="#about_sec">About</a></li>
       <li><a href="#">WishList</a></li>
+
     </ul>
+
 
     @stop
 

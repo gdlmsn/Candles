@@ -53,7 +53,7 @@ class AuthController extends Controller
      * @param  array  $data
      * @return User
      */
-    protected function create(array $data)
+   protected function create(array $data)
     {
         return User::create([
             'name' => $data['name'],
@@ -62,9 +62,12 @@ class AuthController extends Controller
         ]);
     }
 
-    /**
-    *Get Register Page
-    */
+    protected $redirectPath = '/';
+    protected $loginPath = 'login';
+
+
+    /*Get Register Page*/
+
     public function getRegister() {
 
       $text = [];
@@ -73,9 +76,9 @@ class AuthController extends Controller
       return view ('auth.register',  $text);
     }
 
-    /**
-    *Register user to DB function
-    */
+
+    /*Register user to DB function*/
+
     public function postRegister(Request $request)
     {
         $this->validate($request, [
@@ -94,7 +97,7 @@ class AuthController extends Controller
     }
 
 
-
+/*
     public function getLogin(){
       return view('auth.login');
     }
@@ -115,12 +118,13 @@ class AuthController extends Controller
            // Authentication passed...
            return redirect()->intended($this->redirectPath());
     }
-    return redirect('/auth/login')
+    return redirect('/')
     ->withInput($request->only('email'))
     ->withErrors([
       'email' => 'These Credentials do not match our records'
     ]);
   }
+  */
 
 
 

@@ -12,16 +12,15 @@
 
     @section('content')
 
-        <div class="title">{{ $welcome }}</div>
-        <div class="highlight">{{ $useregistration }}</div>
 
         <hr/>
-        <div class="container-fluid">
+           <div class="container-fluid">
 
-          <div class="row">
+        <div class="row">
             <div class="col-md-4">
 
-        {!! Form::open(array('url'=>'thanks')) !!}
+            <form method="POST" action="/auth/register">
+                {!! csrf_field() !!}
 
             <div class="form-group">
             {!! Form::label('email','Email Address') !!}
@@ -51,6 +50,34 @@
           @endforeach
         </ul>
         @endif
+
+      <!--     <form method="POST" action="/auth/register">
+            {!! csrf_field() !!}
+
+            <div>
+                Name
+                <input type="text" name="name" value="{{ old('name') }}">
+            </div>
+
+            <div>
+                Email
+                <input type="email" name="email" value="{{ old('email') }}">
+            </div>
+
+            <div>
+                Password
+                <input type="password" name="password">
+            </div>
+
+            <div>
+                Confirm Password
+                <input type="password" name="password_confirmation">
+            </div>
+
+            <div>
+                <button type="submit">Register</button>
+            </div>
+        </form>-->
 
         </div>
       </div>

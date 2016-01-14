@@ -17,7 +17,9 @@
 
         <div class="row">
           <div class="col-md-4">
-            {!! Form::open(array('url' => 'login', 'method' => 'post')) !!}
+
+          <form method="POST" action="/auth/login">
+               {!! csrf_field() !!}
 
 
             <div class="form-group">
@@ -42,6 +44,28 @@
               @endforeach
             </ul>
             @endif
+<!--
+            <form method="POST" action="/auth/login">
+                 {!! csrf_field() !!}
+
+                <div class="form-group">
+                    Email
+                    <input type="email" name="email" value="{{ old('email'), array('class' => 'form-control') }}">
+                </div>
+
+                <div class="form-group">
+                    Password
+                    <input type="password" name="password" id="password">
+                </div>
+
+                <div class="form-group">
+                    <input type="checkbox" name="remember"> Remember Me
+                </div>
+
+                <div class="form-group">
+                    <button type="submit">Login</button>
+                </div>
+            </form>-->
           </hr>
             <div class="non-member">
             <a href="{{ action("Auth\AuthController@getRegister") }}">Not a member? Sign-up!</a>

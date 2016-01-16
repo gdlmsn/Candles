@@ -30,15 +30,20 @@
         <div class="bs-example" data-example-id="thumbnails-with-custom-content">
            <div class="row">
              <div class="col-xs-4 col-sm-4 col-md-4">
+               <div class="product-image-wrapper">
+
+
                <div class="thumbnail th1">
-                 <a href="{{ action('ProductController@show',[$products->id]) }}">
-                   {!! Html::image('img/01-main1.png') !!}
+                  {!! Html::image('img/01-main1.png') !!}
+                 <a href="{{ action('ProductController@show',[$products->id]) }}"><i class="fa fa-info"></i>Product Details</a>
+                 <a href="{{url('cart')}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
                   <div class="caption">
                     <p>{{ $products->name }}</p>
                     <hr/>
-                    <p>{{ $products->price }} </p>
-                    </a>
+                    <p>{{ $products->price }} $
+                     </p>
                   </div>
+              </div>
               </div>
             </div>
           </div>

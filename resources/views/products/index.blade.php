@@ -2,8 +2,8 @@
 
     @section('nav')
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="#home_sec">Home</a></li>
-      <li><a href="#shop_sec">Shop</a></li>
+      <li><a href="">Home</a></li>
+      <li><a href="">Shop</a></li>
       <li><a href="#care_sec">Care</a></li>
       <li><a href="#about_sec">About</a></li>
     </ul>
@@ -26,13 +26,11 @@
 
     @foreach($products as $products)
     <article>
-    <div class="container-fluid">
-        <div class="bs-example" data-example-id="thumbnails-with-custom-content">
+    <div class="container">
+          <div class="bs-example" data-example-id="thumbnails-with-custom-content">
            <div class="row">
-             <div class="col-xs-4 col-sm-4 col-md-4">
+             <div class="col-xs-3 col-sm-3 col-md-3">
                <div class="product-image-wrapper">
-
-
                <div class="thumbnail th1">
                   {!! Html::image('img/01-main1.png') !!}
                  <a href="{{ action('ProductController@show',[$products->id]) }}"><i class="fa fa-info"></i>Product Details</a>
@@ -52,7 +50,9 @@
     </article>
     @endforeach
 
-
+    <script type="text/javascript">
+        var root = '{{url("/")}}';
+    </script>
     <script>
     	$(document).ready(function(){
     	    $('#srch-input').selectize();

@@ -3,53 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Input;
-use Response;
+
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class SearchController extends Controller
+class CartController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-   public function appendValue($data, $type, $element)
-    {
-    	// operate on the item passed by reference, adding the element and type
-    	foreach ($data as $key => & $item) {
-    		$item[$element] = $type;
-    	}
-    	return $data;
-    }
-
-    public function appendURL($data, $prefix)
-    {
-    	// operate on the item passed by reference, adding the url based on slug
-    	foreach ($data as $key => & $item) {
-    		$item['url'] = url($prefix.'/'.$item['slug']);
-    	}
-    	return $data;
-    }
-
     public function index()
     {
-      $query = e(Input::get('q',''));
-      if(!$query && $query == '') return Response::json(array(), 400);
-
-      $products = Product::where('published', true)
-			->where('name','like','%'.$query.'%')
-			->orderBy('name','asc')
-			->take(5)
-			->get(array('slug','name','icon'))->toArray();
-
-      $products   = $this->appendURL($products, 'products');
-      $products = $this->appendValue($products, 'product', 'class');
-
-	    return Response::json(array(
-		  'data'=>$data
-	));
+        return view('cart.index');
     }
 
     /**

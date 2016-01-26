@@ -29,9 +29,11 @@
 
     <!--navbar-->
 <div class="container-fluid member">
-  <div class="">
-    {!! Html::image('img/cart3.png') !!}
+  <div class="row ">
+    <a href="{{ action('CartController@index') }}">
+    {!! Html::image('img/cart3.png') !!}</a>
   </div>
+
 </div>
     <nav class="navbar">
       <div class="navbar-header">
@@ -56,12 +58,12 @@
       <div class="row">
         <div class="col-md-6">
           <ul class="list-group vmen">
-            <li class="list-group-item"> <a href="#">Home</a></li>
-            <li class="list-group-item"><a href="#">Shop</a></li>
-            <li class="list-group-item"><a href="#">Care</a></li>
-            <li class="list-group-item"><a href="#">About</a></li>
-            <li class="list-group-item"><a href="#">Contact</a></li>
-            <li class="list-group-item"><a href="#">Privacy</a></li>
+            <li class="list-group-item"> <a href="">Home</a></li>
+            <li class="list-group-item"><a href="">Shop</a></li>
+            <li class="list-group-item"><a href="">Care</a></li>
+            <li class="list-group-item"><a href="">About</a></li>
+            <li class="list-group-item"><a href="">Contact</a></li>
+            <li class="list-group-item"><a href="">Privacy</a></li>
           </ul>
         </div>
         <div class="col-md-4">

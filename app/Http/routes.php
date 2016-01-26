@@ -47,9 +47,9 @@ Route::get('about', 'PagesController@about');
 //Poducts
 Route::get('products', 'ProductController@index');
 Route::get('products/create', 'ProductController@create');
-Route::get('products/{id}', 'ProductController@show');
+Route::get('products/{id}', 'ProductController@show'); 
 Route::post('products', 'ProductController@store');
-Route::post('cart','CartController@index');
+//Route::post('cart','CartController@index');
 
 
 //Route::get('products.show', 'ProductDetailsController@index');
@@ -66,3 +66,6 @@ Route::controllers([
 
 //Search
 //Route::get('products', 'SearchController@index');
+
+//Cart
+Route::get('cart', 'CartController@index');

@@ -16,6 +16,9 @@ class ProductController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+  
+
     public function index()
     {
     //  $products = DB::table('products')->get();
@@ -48,6 +51,7 @@ class ProductController extends Controller
 
     public function create()
     {
+
       return view('products.create');
     }
 

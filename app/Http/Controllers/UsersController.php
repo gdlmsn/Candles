@@ -51,20 +51,17 @@ class UsersController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    /* public function authenticate()
-    {
-        if (Auth::attempt(['email' => $user->email, 'password' => $user->password])) {
-          $theEmail = Input::get('email');
-            return redirect()->intended('logged', compact('theEmail'));
-    }
-    }
-
-*/
-
     public function show($id)
     {
         //
     }
+
+    public function showProfile(Request $request, $id)
+   {
+       $value = $request->session()->get('key');
+
+       //
+   }
 
     /**
      * Show the form for editing the specified resource.

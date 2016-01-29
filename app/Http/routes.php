@@ -27,18 +27,6 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
-//Route::get('login', array('as' => 'login', 'uses' => 'UsersController@login'));
-//Route::post('login', array('uses' => 'UsersController@signin'));
-//Route::get('login', 'UsersController@authenticate');
-
-//Registration routes
-//Route::get('auth/register', 'Auth\AuthController@getRegister');
-//Route::post('thanks', 'Auth\AuthController@postRegister');
-
-//Authentication routes
-//Route::get('auth/login', 'Auth\AuthController@getLogin');
-//Route::post('auth/login', 'Auth\AuthController@postLogin');
-//Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
 
 //About
@@ -47,14 +35,8 @@ Route::get('about', 'PagesController@about');
 //Poducts
 Route::get('products', 'ProductController@index');
 Route::get('products/create', 'ProductController@create');
-Route::get('products/{id}', 'ProductController@show'); 
+Route::get('products/{id}', 'ProductController@show');
 Route::post('products', 'ProductController@store');
-//Route::post('cart','CartController@index');
-
-
-//Route::get('products.show', 'ProductDetailsController@index');
-//Route::get('products/{id}', array('as' =>'productdetails', 'uses' => 'ProductController@show'));
-//Route::get('productdetails', 'ProductController@details');
 
 
 //Auth
@@ -64,8 +46,5 @@ Route::controllers([
 ]);
 
 
-//Search
-//Route::get('products', 'SearchController@index');
-
 //Cart
-Route::get('cart', 'CartController@index');
+Route::post('/cart', 'CartController@cart');

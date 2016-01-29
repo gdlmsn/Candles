@@ -18,8 +18,6 @@
   <link href="{{ asset('css/custom.css') }}" rel="stylesheet" type="text/css">
 
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-  <!-- Selectize Stylesheet-->
-  <link href="{{ url('vendor/selectize/css/selectize.bootstrap3.css') }}" rel="stylesheet">
 
 </head>
 
@@ -30,7 +28,7 @@
     <!--navbar-->
 <div class="container-fluid member">
   <div class="row ">
-    <a href="{{ action('CartController@index') }}">
+    <a href="{{ action('CartController@cart') }}">
     {!! Html::image('img/cart3.png') !!}</a>
   </div>
 
@@ -104,15 +102,11 @@
   <!-- jQuery -->
   <script type="text/javascript" src="{{ URL::asset('js/jquery.js') }}"></script>
 
-  <!--Selectize js-->
-  <script type="text/javascript" src="{{ URL::asset('js/main.js') }}"></script>
-
   <!-- Bootstrap Core JavaScript -->
   <script type="text/javascript" src="{{ URL::asset('js/bootstrap.min.js') }}"></script>
 
   <script type="text/javascript" src='//code.jquery.com/jquery-1.10.2.min.js'></script>
 
-  <script type="text/javascript" src='{{ url("vendor/selectize/js/standalone/selectize.min.js") }}'></script>
 
   <script type="text/javascript">
       var root = '{{url("/")}}';

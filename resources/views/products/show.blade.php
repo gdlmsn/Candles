@@ -90,7 +90,7 @@
             </select>
           </div>
           <div class="col-md-2">
-           <button type="button" class="btn btn-default">Add to cart</button>
+        <a href="{{url('cart')}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
         </div>
         </div>
         <hr/>

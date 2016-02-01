@@ -16,39 +16,37 @@
     @stop
 
     @section('content')
-   <h1>Products</h1>
+      <div class="container">
 
-   @foreach($products as $products)
-   <article>
-   <div class="container">
-         <div class="bs-example" data-example-id="thumbnails-with-custom-content">
-          <div class="row">
-            <div class="col-xs-3 col-sm-3 col-md-3">
-              <div class="product-image-wrapper">
-              <div class="thumbnail th1">
-                 {!! Html::image('img/01-main1.png') !!}
-                <a href="{{ action('ProductController@show',[$products->id]) }}"><i class="fa fa-info"></i>Product Details</a>
-                <a href="{{url('cart')}}" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</a>
-                 <div class="caption">
-                   <p>{{ $products->name }}</p>
-                   <hr/>
-                   <p>{{ $products->price }} $
-                    </p>
-                    <form method="POST" action="{{url('cart')}}">
-                      <input type="hidden" name="id" value="{{$products->id}}">
-                      <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                      <button type="submit" class="btn btn-fefault add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
-                    </form>
-                 </div>
-             </div>
-             </div>
-           </div>
-         </div>
-         </div>
-         </div>
-   </article>
-   @endforeach
-
-
-
-   @stop
+          <h2 class="title text-center">Products</h2>
+             @foreach($products as $products)
+             <div class="row">
+               <div class="col-sm-9 padding-right">
+                 <div class="col-sm-4">
+                   <div class="product-image-wrapper">
+                      <div class="single-products">
+                        <div class="productinfo text-center">
+                          <div class="thumbnail th1">
+                            {!! Html::image('img/01-main1.png') !!}
+                              <a href="{{ action('ProductController@show',[$products->id]) }}"><i class="fa fa-info"></i>Product Details</a>
+                                <form method="POST" action="{{url('cart')}}">
+                                  <input type="hidden" name="id" value="{{$products->id}}">
+                                  <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                  <button type="submit" class="btn btn-fefault add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
+                                </form>
+                                <div class="caption">
+                                  <p>{{ $products->name }}</p>
+                                  <hr/>
+                                  <p>{{ $products->price }} $</p>
+                                </div>
+                          </div>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              @endforeach
+        </div>
+      </div>
+      </section>
+@stop

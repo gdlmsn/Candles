@@ -3,15 +3,6 @@
 
     @section('nav')
 
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="">Home</a></li>
-      <li><a href="{{ action('ProductController@index') }}">Shop</a></li>
-      <li><a href="#care_sec">Care</a></li>
-      <li><a href="#about_sec">About</a></li>
-      <li><a href="{{ action('Auth\AuthController@getLogin') }}">Login</li>
-
-    </ul>
-
 
     @stop
 

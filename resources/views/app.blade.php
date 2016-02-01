@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,22 +12,17 @@
 
   <!-- Bootstrap Core CSS -->
   <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
-
   <!-- Custom CSS -->
   <link href="{{ asset('css/custom.css') }}" rel="stylesheet" type="text/css">
-
+  <!-- GoogleApis-->
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="50">
   <div class="container">
 
-
     <!--navbar-->
-
         @yield ('nav')
-
         <div class="container-fluid member">
           <div class="row ">
             <a href="{{ url('cart') }} ">
@@ -58,14 +52,15 @@
                         <div class="col-sm-8">
                             <div class="shop-menu pull-right">
                                 <ul class="nav navbar-nav">
-                                    <li><a href=""><i class="fa fa-crosshairs"></i> Home</a></li>
-                                    <li><a href="{{url('products')}}"><i class="fa fa-crosshairs"></i> Products</a></li>
-                                    <li><a href=""><i class="fa fa-crosshairs"></i> Care</a></li>
-                                    <li><a href=""><i class="fa fa-crosshairs"></i> About Us</a></li>
-                                    <li><a href=""><i class="fa fa-crosshairs"></i> Contact Us</a></li>
-                                    <li><a href="{{url('checkout')}}"><i class="fa fa-crosshairs"></i> Checkout</a></li>
-                                    <li><a href="{{url('cart')}}"><i class="fa fa-shopping-cart"></i> Cart</a></li>
-                                    <li><a href="{{Auth::check() ? url('auth/logout') : url('auth/login')}}"><i class="fa fa-lock"></i> {{Auth::check() ? 'Logout' : 'Login'}}</a></li>
+                                    <li><a href="{{url('/')}}"> Home</a></li>
+                                    <li><a href="{{url('products')}}">Products</a></li>
+                                    <li><a href="{{url('')}}"> Care</a></li>
+                                    <li><a href="{{url('')}}"> About Us</a></li>
+                                    <li><a href="{{url('')}}"> Contact Us</a></li>
+                                    <li><a href="{{url('checkout')}}"> Checkout</a></li>
+                                    <li><a href="{{url('cart')}}"> Cart</a></li>
+                                    <li><a href="{{Auth::check() ? url('auth/logout') : url('auth/login')}}"> {{Auth::check() ? 'Logout' : 'Login'}}</a></li>
+
                                 </ul>
                             </div>
                         </div>
@@ -77,6 +72,10 @@
 
 
     @yield('content')
+
+
+
+    @yield('footer')
 
     <div class=" allblackeverything">
       <div class="row">

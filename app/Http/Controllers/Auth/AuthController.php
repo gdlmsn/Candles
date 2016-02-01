@@ -62,7 +62,7 @@ class AuthController extends Controller
         ]);
     }
 
-    protected $redirectPath = '/';
+      protected $redirectPath = '/';
     protected $loginPath = 'login';
 
 
@@ -95,6 +95,12 @@ class AuthController extends Controller
         $theUsername = Input::get('username');
         return view ('auth.logged', compact('theUsername'));
     }
+
+    // public function logout() {
+    //         Auth::logout();
+    //
+    //         return Redirect::away('welcome');
+    //     }
 
 
 /*

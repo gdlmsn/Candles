@@ -45,6 +45,13 @@ Route::controllers([
   'password' => 'Auth\PasswordController',
 ]);
 
+Route::get('/checkout', [
+    'middleware' => 'auth',
+    'uses' => 'Front@checkout'
+]);
+
 
 //Cart
 Route::post('/cart', 'CartController@cart');
+
+//

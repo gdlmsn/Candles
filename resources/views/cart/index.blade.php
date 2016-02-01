@@ -15,7 +15,7 @@
 
         <section id="cart_items">
       <div class="container">
-          <div class="breadcrumbs">
+          <div class="xsa">
               <ol class="breadcrumb">
                   <li><a href="#">Home</a></li>
                   <li class="active">Shopping Cart</li>
@@ -49,9 +49,9 @@
                           </td>
                           <td class="cart_quantity">
                               <div class="cart_quantity_button">
-                                  <a class="cart_quantity_up" href=""> + </a>
+                                  <a class="cart_quantity_up" href='{{ url("cart?id=$item->id&increment=1") }}'> + </a>
                                   <input class="cart_quantity_input" type="text" name="quantity" value="{{$item->qty}}" autocomplete="off" size="2">
-                                  <a class="cart_quantity_down" href=""> - </a>
+                                  <a class="cart_quantity_down" href='{{ url("cart?id=$item->id&decrease=1") }}'> - </a>
                               </div>
                           </td>
                           <td class="cart_total">
@@ -81,10 +81,7 @@
               <div class="col-sm-6">
                   <div class="total_area">
                       <ul>
-                          <li>Cart Sub Total <span>$59</span></li>
-                          <li>Eco Tax <span>$2</span></li>
-                          <li>Shipping Cost <span>Free</span></li>
-                          <li>Total <span>${{Cart::total()}}</span></li>
+                          <h3>Total <span>${{Cart::total()}}</span></h3>
                       </ul>
                       <a class="btn btn-default update" href="{{url('clear-cart')}}">Clear Cart</a>
                       <a class="btn btn-default check_out" href="{{url('checkout')}}">Check Out</a>

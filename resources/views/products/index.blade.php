@@ -1,14 +1,6 @@
 @extends('app')
 
     @section('nav')
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="">Home</a></li>
-      <li><a href="">Shop</a></li>
-      <li><a href="#care_sec">Care</a></li>
-      <li><a href="#about_sec">About</a></li>
-      <li><a href="">WishList</a></li>
-      <li><a href="">logout</a></li>
-    </ul>
 
     <div class="col-sm-3 col-md-3 pull-right">
         <form class="navbar-form navbar-left" role="search">
@@ -22,9 +14,6 @@
       </div>
 
     @stop
-
-    @section('content')
-    <h1>Products</h1>
 
     @section('content')
    <h1>Products</h1>

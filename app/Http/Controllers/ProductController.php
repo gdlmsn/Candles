@@ -17,41 +17,23 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-  
+
 
     public function index()
     {
-    //  $products = DB::table('products')->get();
-    //  return view ('pages.products', ['products' => $products]);
     $products = Product::all();
     return view('products.index', compact('products'));
     }
-
-  /*  public function details()
-    {
-       return view ('pages.productdetails');
-    }
-    */
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
-
       //**********************DISPLAY ALL FRAGRANCES IN show.blade.php************************************
-
-    public function display(){
-
-       $pt = Fragrance::all();
-       return view('products.show', compact('pt'));
-     }
-
+    //
+    // public function display(){
+    //
+    //    $pt = Fragrance::all();
+    //    return view('products.show', compact('pt'));
+    //  }
 
     public function create()
     {
-
       return view('products.create');
     }
 
@@ -78,19 +60,10 @@ class ProductController extends Controller
       return redirect ('products');
     }
 
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-
      //CREATE PRODUCT
     public function show($id)
     {
-    // $products = DB::table('products')->where('id','=',$id);
-    //  return view ('pages.productdetails',[ 'productdetails' => $productz]);
+
       $product = Product::findOrFail($id);
 
       //dd returns null in case there is no product under that id or returns the product details otherwise.
@@ -99,12 +72,6 @@ class ProductController extends Controller
       return view('products.show', compact('product'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function edit($id)
     {
         //
@@ -132,4 +99,7 @@ class ProductController extends Controller
     {
         //
     }
+
+
+
 }

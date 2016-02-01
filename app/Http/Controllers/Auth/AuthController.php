@@ -93,7 +93,7 @@ class AuthController extends Controller
         $user->password = Hash::make(Input::get('password'));
         $user->save();
         $theUsername = Input::get('username');
-        return view ('auth.logged', compact('theUsername'));
+        return view ('auth.login', compact('theUsername'));
     }
 
     // public function logout() {

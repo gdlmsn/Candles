@@ -15,19 +15,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-
-
 //Login & Authentication
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
+//Auth
+Route::controllers([
+  'auth' => 'Auth\AuthController',
+  'password' => 'Auth\PasswordController',
+]);
+
 // Registration
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
-
-
 
 //About
 Route::get('about', 'PagesController@about');
@@ -38,20 +39,13 @@ Route::get('products/create', 'ProductController@create');
 Route::get('products/{id}', 'ProductController@show');
 Route::post('products', 'ProductController@store');
 
-
-//Auth
-Route::controllers([
-  'auth' => 'Auth\AuthController',
-  'password' => 'Auth\PasswordController',
-]);
-
-Route::get('/checkout', [
-    'middleware' => 'auth',
-    'uses' => 'Front@checkout'
-]);
-
-
 //Cart
 Route::post('/cart', 'CartController@cart');
+Route::get('/clear-cart', 'CartController@clear_cart');
+Route::post('/cart-remove-item', 'CartController@cart_remove_item');
 
-//
+//Search
+Route::get('search-products', 'SearchController@index');
+
+//Admin
+Route::get('admin', 'UsersController@index');

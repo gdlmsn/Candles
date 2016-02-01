@@ -1,13 +1,6 @@
 @extends('app')
 
     @section('nav')
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="#home_sec">Home</a></li>
-      <li><a href="#shop_sec">Shop</a></li>
-      <li><a href="#care_sec">Care</a></li>
-      <li><a href="#about_sec">About</a></li>
-
-
     @stop
 
     @section('content')
@@ -15,7 +8,7 @@
 
         <hr/>
            <div class="container-fluid">
-
+             <h2 class="title text-center">Register</h2>
         <div class="row">
             <div class="col-md-4">
 
@@ -51,35 +44,7 @@
         </ul>
         @endif
 
-      <!--     <form method="POST" action="/auth/register">
-            {!! csrf_field() !!}
-
-            <div>
-                Name
-                <input type="text" name="name" value="{{ old('name') }}">
-            </div>
-
-            <div>
-                Email
-                <input type="email" name="email" value="{{ old('email') }}">
-            </div>
-
-            <div>
-                Password
-                <input type="password" name="password">
-            </div>
-
-            <div>
-                Confirm Password
-                <input type="password" name="password_confirmation">
-            </div>
-
-            <div>
-                <button type="submit">Register</button>
-            </div>
-        </form>-->
-
-        </div>
+      </div>
       </div>
     </div>
     @stop

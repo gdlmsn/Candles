@@ -17,7 +17,7 @@
       <div class="container">
           <div class="xsa">
               <ol class="breadcrumb">
-                  <li><a href="#">Home</a></li>
+                  <li><a href="{{ url('products')}}">Continue Shopping</a></li>
                   <li class="active">Shopping Cart</li>
               </ol>
           </div>
@@ -75,8 +75,7 @@
       <div class="container">
           <div class="heading">
               <h3>What would you like to do next?</h3>
-              <p>Choose if you have a discount code or reward points you want to use or would like to estimate your delivery cost.</p>
-          </div>
+
           <div class="row">
               <div class="col-sm-6">
                   <div class="total_area">

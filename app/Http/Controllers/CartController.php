@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
+
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Redirect;
 use Cart;
+use App\Product;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -21,9 +22,9 @@ class CartController extends Controller
      public function cart()
     {
       if (Request::isMethod('post')) {
-          $product_id = Request::get('id');
+          $id = Request::get('id');
           $product = Product::find($id);
-          Cart::add(array('id' => $product_id, 'name' => $product->name, 'qty' => 1, 'price' => $product->price));
+          Cart::add(array('id' => $id, 'name' => $product->name, 'qty' => 1, 'price' => $product->price));
       }
 
       $cart = Cart::content();

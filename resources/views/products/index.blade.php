@@ -1,10 +1,7 @@
 @extends('app')
 
     @section('nav')
-
-
-
-    @stop
+      @stop
 
     @section('content')
 
@@ -23,8 +20,8 @@
       </div>
     </div>
     <div class="container-fluid">
+      <h2 class="title text-center">Products</h2>
       <div class="row">
-        <h2 class="title text-center">Products</h2>
           </hr>
             @foreach($products as $products)
             <div class="col-sm-3">

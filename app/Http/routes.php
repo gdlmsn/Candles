@@ -48,4 +48,4 @@ Route::post('/cart-remove-item', 'CartController@cart_remove_item');
 Route::get('search-products', 'SearchController@index');
 
 //Admin
-Route::get('admin', 'UsersController@index');
+Route::get('user', 'UsersController@index');

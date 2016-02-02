@@ -24,44 +24,56 @@
       <!--navbar-->
         @yield ('nav')
           <div class="container-fluid member">
-
           </div>
+          <div class="container-fluid">
+            <div class="row">
             <nav class="navbar">
               <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#barra">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                  <span class="sr-only">Toggle Navigation</span>
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                   <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">LUKA</a>
               </div>
 
-              <div class="navbar-collapse" id="barra">
-                <div class="container">
-                  <div class="row">
-                    <div class="col-sm-4">
-                      <div class="logo pull-left">
-                        <a href="{{url('')}}"><img src="{{asset('images/home/logo.png')}}" alt="" /></a>
+              <div class="container-fluid">
+                <div class="row">
+                  <nav class="navbar" role="navigation">
+                      <!-- Brand and toggle grouped for mobile display -->
+                      <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapsible">
+                          <span class="sr-only">Toggle navigation</span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                          <span class="icon-bar"></span>
+                        </button>
+                        <div class="col-sm-4">
+                          <div class="logo pull-left">
+                            <a href="{{url('')}}"><img src="{{asset('images/home/logo.png')}}" alt="" /></a>
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                    <div class="col-sm-8">
-                      <div class="shop-menu pull-right">
+                      <!-- Collect the nav links, forms, and other content for toggling -->
+                      <div class="navbar-collapse collapse navbar-right" id="navbar-collapsible">
                         <ul class="nav navbar-nav">
                           <li><a href="{{url('/')}}"> Home</a></li>
                           <li><a href="{{url('products')}}">Products</a></li>
-                          <li><a href="{{url('')}}"> Care</a></li>
-                          <li><a href="{{url('')}}"> About Us</a></li>
-                          <li><a href="{{url('')}}"> Contact Us</a></li>
+                          <li><a href="{{url('admin')}}"> Admin</a></li>
                           <li><a href="{{url('checkout')}}"> Checkout</a></li>
                           <li><a href="{{url('cart')}}"> Cart</a></li>
                           <li><a href="{{Auth::check() ? url('auth/logout') : url('auth/login')}}"> {{Auth::check() ? 'Logout' : 'Login'}}</a></li>
                         </ul>
                       </div>
-                    </div>
+                      <!-- /.navbar-collapse -->
+
+                    <!-- /.container-fluid -->
+                  </nav>
+                  </div>
                 </div>
-              </div>
-            </div>
-          </nav>
+
+
+
     <!-- content -->
     @yield('content')
     @yield('footer')
@@ -70,7 +82,7 @@
           <div class="footer-top">
             <div class="container">
               <div class="row">
-                <div class="col-sm-3">
+                <div class="col-sm-3 col-sm-offset-2">
                   <h2 class="title text-center">Contact Us</h2>
                     {!! Form::open(array('url'=>'contactform')) !!}
                       <div class="form-group formgroup">
@@ -86,7 +98,27 @@
                       </div>
                         {!! Form::close() !!}
                       </div>
+                      <div class="footer-widget">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-3 col-sm-offset-2">
+                                    <div class="single-widget">
+                                        <h2>Service</h2>
+                                        <ul class="nav nav-pills nav-stacked">
+                                            <li><a href="#">Online Help</a></li>
+                                            <li><a href="#">Contact Us</a></li>
+                                            <li><a href="#">Order Status</a></li>
+                                            <li><a href="#">Change Location</a></li>
+                                            <li><a href="#">FAQ’s</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                          </div>
+                      </div>
               </div>
+
+
             <div class="footer-bottom">
               <div class="container">
                 <div class="row">

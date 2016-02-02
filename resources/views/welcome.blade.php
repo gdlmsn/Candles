@@ -16,6 +16,7 @@
     <li data-target="#myCarousel" data-slide-to="3"></li>
   </ol>
 
+
   <!-- Wrapper for slides -->
   <div class="carousel-inner" role="listbox">
     <div class="item active">
@@ -46,9 +47,10 @@
   </a>
 </div>
 
-<!--THUMBNAIL SECTION-->
 
+<!--THUMBNAIL SECTION-->
 <div class="bs-example" data-example-id="thumbnails-with-custom-content">
+  <h2 class="title text-center">Some of our relaxing products</h2>
    <div class="row">
      <div class="col-xs-4 col-sm-4 col-md-4">
        <div class="thumbnail th1">
@@ -93,24 +95,27 @@
   </div>
 </div>
 
+
       <!--CARE SECTION-->
       <div class="jumbotron jumbotron-fluid jumbo">
-        <div id="care_sec" class="container-fluid care">
-          <h3 class="display-3">{Candle Care}</h3>
-            <p class="lead">Please follow these simple steps to ensure that you make the most of your LUKA candle each and every time.</p>
-            <p class="lead">Step1, Trim the wick to 2mm before each use.</p>
-            <p class="lead">Step2, After your first burn- you can do this by simply pinching and pulling away any excess charred wick.</p>
-            <p class="lead">Step3, Be sure to remove any wick trimmings from the surface of the candle prior to lighting.</p>
-            <p class="lead">Step4, Burn your LUKA candle for 3-4 hours at a time ensuring the wax has liquefied across the surface to the sides of the jar.</p>
-            <p class="lead">Some wax discolouration may occur after lighting your LUKA candle.
-                        This is due to the natural and raw ingredients in your LUKA candle and is perfectly normal.
-                  When lit you will hear the soothing sound of the wood wick gently crackling. This is natural and part of a LUKA candle's charm.</p>
+        <div class="container-fluid ">
+          <h2 class="title text-center">Products Care</h2>
+            <p>Please follow these simple steps to ensure that you make the most of your LUKA candle each and every time.</p>
+            <p>Step1, Trim the wick to 2mm before each use.</p>
+            <p>Step2, After your first burn- you can do this by simply pinching and pulling away any excess charred wick.</p>
+            <p>Step3, Be sure to remove any wick trimmings from the surface of the candle prior to lighting.</p>
+            <p>Step4, Burn your LUKA candle for 3-4 hours at a time ensuring the wax has liquefied across the surface to the sides of the jar.</p>
+            <p>Some wax discolouration may occur after lighting your LUKA candle.This is due to the natural and raw ingredients in your LUKA candle
+              and is perfectly normal. When lit you will hear the soothing sound of the wood wick gently crackling. This is natural and part of a LUKA candle's charm.</p>
         </div>
       </div>
 
 <!--About Section-->
-<div id="about_sec" class="cointainer-fluid about">
+<div class="cointainer-fluid about">
+  <div class="bs-example" data-example-id="thumbnails-with-custom-content">
+
    {!! Html::image('img/02-thumb.png') !!}
+ </div>
   <p class="lead">
       LUKA candles are a luxurious and personal expression of Chloe's appreciation of the therapeutic and mood altering properties of essential oils and certain fragrances,
        the effects of which are further enhanced by the ambient warm glow of candlelight. Every divinely distinctive Luka candle is made of 100% pure eco soy wax which is

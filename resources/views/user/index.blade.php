@@ -4,11 +4,10 @@
 @stop
 
 @section('content')
-<div class="container-fluid">
-
-
-<div class="col-lg-10 col-lg-offset-1">
+<div class="container">
+  <div class="col-lg-10 col-lg-offset-1">
 <h1 class="title text-center">Admin Panel</h1>
+<hr><br>
 
     <div class="table-responsive">
         <table class="table table-bordered table-striped">
@@ -30,9 +29,8 @@
                     <td>{{ $user->created_at->format('F d, Y h:ia') }}</td>
                     <td>
 
-                        <a href="/user/{{ $user->id }}/edit" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>
-                        {!! Form::submit('Create', array('class' => 'btn btn-primary')) !!}
-                        {!! Form::open(['url' => '/user/' . $user->id, 'method' => 'DELETE']) !!}
+                        <a href="{{ action('UsersController@edit',[$user->id]) }}" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>
+                        {!! Form::open(['route' => ['delete.user', $user->id], 'method' => 'DELETE']) !!}
                         {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
                         {!! Form::close() !!}
                     </td>
@@ -43,8 +41,10 @@
         </table>
     </div>
 
-    <a href="/user/create" class="btn btn-success">Add User</a>
-
+    <a href="/user/create" class="btn btn-success pull-right">Add User</a>
+<br>
+<br>
+<br>
 </div>
 </div>
 @stop

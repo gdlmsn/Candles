@@ -59,7 +59,7 @@
                         <ul class="nav navbar-nav">
                           <li><a href="{{url('/')}}"> Home</a></li>
                           <li><a href="{{url('products')}}">Products</a></li>
-                          <li><a href="{{url('admin')}}"> Admin</a></li>
+                          <li><a href="{{url('user')}}"> Admin</a></li>
                           <li><a href="{{url('checkout')}}"> Checkout</a></li>
                           <li><a href="{{url('cart')}}"> Cart</a></li>
                           <li><a href="{{Auth::check() ? url('auth/logout') : url('auth/login')}}"> {{Auth::check() ? 'Logout' : 'Login'}}</a></li>

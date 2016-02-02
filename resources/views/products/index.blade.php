@@ -20,9 +20,10 @@
       </div>
     </div>
     <div class="container-fluid">
-      <h2 class="title text-center">Products</h2>
+      <h1 class="title text-center">Products</h1>
+      <hr><br>
       <div class="row">
-          </hr>
+
             @foreach($products as $products)
             <div class="col-sm-3">
               <div class="product-image-wrapper">

@@ -3,7 +3,8 @@
 
     @section('content')
       <div class="container-fluid">
-        <h2 class="title text-center">Login</h2>
+        <h1 class="title text-center">Login</h1>
+        <hr>
 
         <div class="row">
           <div class="col-md-4">
@@ -27,13 +28,11 @@
             </div>
             {!! Form::close() !!}
 
-            @if ($errors->any())
-            <ul class="alert alert-danger">
-              @foreach ($errors->all() as $error)
-              <li>{{ $error }}</li>
-              @endforeach
-            </ul>
-            @endif
+            @if ($errors->has())
+             @foreach ($errors->all() as $error)
+                 <div class='bg-danger alert'>{{ $error }}</div>
+             @endforeach
+             @endif
           </hr>
             <div class="non-member">
             <a href="{{ action("Auth\AuthController@getRegister") }}">Not a member? Sign-up!</a>

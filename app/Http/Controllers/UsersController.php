@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 
-
+use DB;
 use Input;
 use Hash;
 use Auth;
@@ -22,15 +22,15 @@ class UsersController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-     public function getFullName()
-	  {
-		    return $this->username;
-	  }
-
-     public function __construct()
-	    {
-		      $this->beforeFilter('auth');
-	   }
+    //  public function getFullName()
+	  // {
+		//     return $this->username;
+	  // }
+    //
+    //  public function __construct()
+	  //   {
+		//       $this->beforeFilter('auth');
+	  //  }
 
     public function index()
     {
@@ -68,7 +68,7 @@ class UsersController extends Controller
        $user->password = Hash::make(Input::get('password'));
        $user->save();
 
-       return Redirect::to('/user');
+       return redirect ('/user');
      }
 
 
@@ -84,49 +84,26 @@ class UsersController extends Controller
         //
     }
 
-    public function showProfile(Request $request, $id)
-   {
-       //$value = $request->session()->get('key');
-
-       //
-   }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-
     public function edit($id)
     {
       $user = User::find($id);
-
       return view ('user.edit', compact('user'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function update(Request $request, $id)
     {
       $this->validate($request, [ 'username' => 'required|max:255|min:4|unique:users',
                                   'email' => 'required|email|max:255|unique:users',
                                   'password' => 'required|confirmed|min:6'
                                 ]);
-
-      $user = User::find($id);
+      $user = User::findOrFail($id);
 
       $user->username = Input::get('username');
       $user->email = Input::get('email');
       $user->password = Hash::make(Input::get('password'));
       $user->save();
 
-      return Redirect::to('/user');
+      return redirect ('user.index');
     }
 
     /**
@@ -139,7 +116,7 @@ class UsersController extends Controller
     {
       User::destroy($id);
 
-		  return Redirect::to('/user');
+		  return redirect ('/user');
     }
 
 

@@ -11,10 +11,9 @@
     </hr>
 
     <div class="container-fluid">
-
       <div class="row">
         <div class="col-md-4">
-          {!! Form::open(array('url' => 'products', 'method' => 'post')) !!}
+          {!! Form::open(array('url' => '/products', 'method' => 'post')) !!}
 
 
           <div class="form-group">
@@ -57,15 +56,18 @@
           {!! Form::submit('Create', array('class' => 'btn btn-primary')) !!}
           </div>
           {!! Form::close() !!}
+          </div>
+          
+          <div class="col-md-4">
+          @if ($errors->has())
+           @foreach ($errors->all() as $error)
+               <div class='bg-danger alert'>{{ $error }}</div>
+           @endforeach
+           @endif
+           </div>
 
-          @if ($errors->any())
-          <ul class="alert alert-danger">
-            @foreach ($errors->all() as $error)
-            <li>{{ $error }}</li>
-            @endforeach
-          </ul>
-          @endif
-        </div>
+
       </div>
+    </div>
 
     @stop

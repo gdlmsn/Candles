@@ -5,10 +5,10 @@
 
 @section('content')
 <div class="container">
+  <h1 class="title text-center">Administrator</h1>
+  <hr>
   <div class="col-lg-10 col-lg-offset-1">
-<h1 class="title text-center">Admin Panel</h1>
-<hr><br>
-
+    <h2 class="title text-center">Users Panel</h2>
     <div class="table-responsive">
         <table class="table table-bordered table-striped">
 
@@ -46,5 +46,8 @@
 <br>
 <br>
 </div>
+
+
+
 </div>
 @stop

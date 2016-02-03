@@ -38,8 +38,10 @@ Route::get('products', 'ProductController@index');
 Route::get('products/create', 'ProductController@create');
 Route::get('products/{id}', 'ProductController@show');
 Route::post('products', 'ProductController@store');
+Route::delete('delete/{id} ',array('uses' => 'ProductController@destroy', 'as' => 'delete.product'));
 
 //Cart
+Route::get('/cart','CartController@cart');
 Route::post('/cart', 'CartController@cart');
 Route::get('/clear-cart', 'CartController@clear_cart');
 Route::post('/cart-remove-item', 'CartController@cart_remove_item');

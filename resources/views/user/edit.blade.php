@@ -13,8 +13,8 @@
 
 
         <h1><i class='fa fa-user'></i> Edit User</h1>
-        {!! Form::model($user, array('method' => 'PUT')) !!}
-        
+        {!! Form::model(['route' => ['edit.user', $user->id], 'method' => 'PUT']) !!}
+
         <div class='form-group'>
             {!! Form::label('username', 'Username') !!}
             {!! Form::text('username', null, ['placeholder' => 'Username', 'class' => 'form-control']) !!}
@@ -40,13 +40,16 @@
         </div>
 
         {!! Form::close() !!}
+      </div>
+      <div class="col-md-4">
+
 
         @if ($errors->has())
             @foreach ($errors->all() as $error)
                 <div class='bg-danger alert'>{{ $error }}</div>
             @endforeach
         @endif
-
+        </div>
     </div>
   </diV>
 </div>

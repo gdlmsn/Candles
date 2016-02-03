@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Product;
 use DB;
 use Input;
 use Hash;
@@ -33,9 +33,9 @@ class UsersController extends Controller
 	  //  }
 
     public function index()
-    {
+    {   $products = Product::all();
         $users = User::all();
-        return view ('user.index',compact('users'));
+        return view ('user.index',compact('users', 'products'));
     }
 
     /**

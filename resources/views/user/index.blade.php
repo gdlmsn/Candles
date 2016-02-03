@@ -47,6 +47,53 @@
 <br>
 </div>
 
+<div class="col-lg-10 col-lg-offset-1">
+  <h2 class="title text-center">Products Panel</h2>
+  <div class="table-responsive">
+      <table class="table table-bordered table-striped">
+
+          <thead>
+              <tr>
+                  <th>Username</th>
+                  <th>Email</th>
+                  <th>Date/Time Added</th>
+                  <th>Actions</th>
+                  <th>Actions</th>
+                  <th>Actions</th>
+                  <th>Actions</th>
+                  <th>Actions</th>
+              </tr>
+          </thead>
+
+          <tbody>
+              @foreach ($products as $product)
+              <tr>
+                <td>{{ $product->name }}</td>
+                <td>{{ $product->stock }}</td>
+                <td>{{ $product->price }}</td>
+                <td>{{ $product->special_price }}</td>
+                <td>{{ $product->weight }}</td>
+                <td>{{ $product->size }}</td>
+                <td>{{ $product->description }}</td>
+
+                        <td>
+
+                            <a href="{{ action('ProductController@edit',[$product->id]) }}" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>
+                            {!! Form::open(['route' => ['mamma', $product->id], 'method' => 'DELETE']) !!}
+                            {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                            {!! Form::close() !!}
+                        </td>
+              </tr>
+              @endforeach
+          </tbody>
+
+      </table>
+  </div>
+
+  <a href="/products/create" class="btn btn-success pull-right">Add User</a><br>
+<br>
+<br>
+</div>
 
 
 </div>

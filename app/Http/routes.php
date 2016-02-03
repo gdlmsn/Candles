@@ -37,8 +37,10 @@ Route::get('about', 'PagesController@about');
 Route::get('products', 'ProductController@index');
 Route::get('products/create', 'ProductController@create');
 Route::get('products/{id}', 'ProductController@show');
+Route::get('products/{id} ', 'ProductController@edit');
 Route::post('products', 'ProductController@store');
-Route::delete('delete/{id} ',array('uses' => 'ProductController@destroy', 'as' => 'delete.product'));
+Route::post('products/{id}/edit', array('uses' => 'ProductController@update', 'as' => 'edit.product'));
+Route::delete('produtcs/{id} ',array('uses' => 'ProductController@destroy', 'as' => 'mamma'));
 
 //Cart
 Route::get('/cart','CartController@cart');

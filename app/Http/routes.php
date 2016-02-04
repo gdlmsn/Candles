@@ -38,8 +38,8 @@ Route::get('products', 'ProductController@index');
 Route::get('products/create', 'ProductController@create');
 Route::get('products/{id}', 'ProductController@show');
 Route::post('products', 'ProductController@store');
-Route::get('products/{id}/', 'ProductController@edit');
-Route::patch('products/{id}', array('uses' => 'ProductController@update', 'as' => 'edit.product'));
+Route::get('/products/{id}/', 'ProductController@edit');
+Route::patch('/products/{id}', array('uses' => 'ProductController@update', 'as' => 'edit.product'));
 Route::delete('produtcs/{id} ',array('uses' => 'ProductController@destroy', 'as' => 'mamma'));
 //Wishlist
 Route::get('/wishlist', 'ProductController@addtowishlist');

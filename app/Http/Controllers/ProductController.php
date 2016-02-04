@@ -37,32 +37,6 @@ class ProductController extends Controller
       return view('products.create');
     }
 
-
-    public function edit($id)
-    {
-      $product = Product::find($id);
-      return view ('products.edit', compact('product'));
-    }
-
-
-    public function update(Request $request, $id)
-    {
-      $product = Product::findOrFail($id);
-
-      $product->name = Input::get('username');
-      $product->stock = Input::get('stock');
-      $product->price = Input::get('price');
-      $product->special_price = Input::get('special_price');
-      $product->weight = Input::get('weight');
-      $product->size = Input::get('size');
-      $product->description = Input::get('description');
-
-      $product->save();
-
-      return redirect ('/user');
-
-    }
-
     public function store(Request $request)
     {
 
@@ -92,7 +66,29 @@ class ProductController extends Controller
       return view('products.show', compact('product'));
     }
 
+    public function edit($id)
+    {
+      $product = Product::find($id);
+      return view ('products.edit', compact('product'));
+    }
 
+    public function update(Request $request, $id)
+    {
+      $product = Product::findOrFail($id);
+
+      $product->name = Input::get('username');
+      $product->stock = Input::get('stock');
+      $product->price = Input::get('price');
+      $product->special_price = Input::get('special_price');
+      $product->weight = Input::get('weight');
+      $product->size = Input::get('size');
+      $product->description = Input::get('description');
+
+      $product->save();
+
+      return redirect ('/user');
+
+    }
 
     /**
      * Update the specified resource in storage.

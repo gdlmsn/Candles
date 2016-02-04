@@ -22,30 +22,30 @@
 
         <div class='form-group'>
             {!! Form::label('stock', 'Stock') !!}
-            {!! Form::stock('stock', null, ['placeholder' => 'Stock', 'class' => 'form-control']) !!}
+            {!! Form::text('stock', null, ['placeholder' => 'Stock', 'class' => 'form-control']) !!}
         </div>
 
         <div class='form-group'>
             {!! Form::label('price', 'Price') !!}
-            {!! Form::price('price', null,  ['placeholder' => 'Price', 'class' => 'form-control']) !!}
+            {!! Form::text('price', null,  ['placeholder' => 'Price', 'class' => 'form-control']) !!}
         </div>
 
         <div class='form-group'>
             {!! Form::label('special_price', 'Special Price') !!}
-            {!! Form::price('special_price', null,  ['placeholder' => 'Special Price', 'class' => 'form-control']) !!}
+            {!! Form::text('special_price', null,  ['placeholder' => 'Special Price', 'class' => 'form-control']) !!}
         </div>
 
         <div class='form-group'>
             {!! Form::label('weight', 'Weight') !!}
-            {!! Form::price('weight', null,  ['placeholder' => 'Weight', 'class' => 'form-control']) !!}
+            {!! Form::text('weight', null,  ['placeholder' => 'Weight', 'class' => 'form-control']) !!}
         </div>
         <div class='form-group'>
             {!! Form::label('size', 'Size') !!}
-            {!! Form::price('size', null,  ['placeholder' => 'Size', 'class' => 'form-control']) !!}
+            {!! Form::text('size', null,  ['placeholder' => 'Size', 'class' => 'form-control']) !!}
         </div>
         <div class='form-group'>
             {!! Form::label('description', 'description') !!}
-            {!! Form::price('description', null,  ['placeholder' => 'Description', 'class' => 'form-control']) !!}
+            {!! Form::text('description', null,  ['placeholder' => 'Description', 'class' => 'form-control']) !!}
         </div>
 
 

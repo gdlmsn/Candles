@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers\Auth;
 use App\User;
+use Illuminate\Contracts\Auth\Guard;
 use Input;
 use Hash;
 use Auth;
@@ -29,8 +30,17 @@ class AuthController extends Controller
      *
      * @return void
      */
-    public function __construct()
+
+  //    public function __construct(Guard $auth, User $user)
+  //  {
+  //      $this->user = $user;
+  //      $this->auth = $auth;
+   //
+  //      $this->middleware('guest', ['except' => ['getLogout']]);
+  //  }
+    public function __construct(Guard $auth, User $user)
     {
+        $this->auth = $auth;
         $this->middleware('guest', ['except' => 'getLogout']);
     }
     /**
@@ -103,10 +113,8 @@ class AuthController extends Controller
     //     }
 
 
-/*
-    public function getLogin(){
-      return view('auth.login');
-    }
+
+
 
 
 
@@ -124,13 +132,13 @@ class AuthController extends Controller
            // Authentication passed...
            return redirect()->intended($this->redirectPath());
     }
-    return redirect('/')
+    return redirect('/auth/login')
     ->withInput($request->only('email'))
     ->withErrors([
       'email' => 'These Credentials do not match our records'
     ]);
   }
-  */
+
 
 
 

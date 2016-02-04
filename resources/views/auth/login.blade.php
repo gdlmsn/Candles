@@ -3,6 +3,7 @@
 
     @section('content')
       <div class="container-fluid">
+      
         <h1 class="title text-center">Login</h1>
         <hr>
 

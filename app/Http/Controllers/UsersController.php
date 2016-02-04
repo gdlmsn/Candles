@@ -16,7 +16,7 @@ use Redirect;
 
 class UsersController extends Controller
 {
-    
+
     public function index()
     {
        $products = Product::all();

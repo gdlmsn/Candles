@@ -6,13 +6,12 @@
         @stop
 
         @section('content')
-
         <section id="cart_items">
       <div class="container">
           <div class="xsa">
               <ol class="breadcrumb">
-                  <li><a href="{{ url('products')}}">Continue Shopping</a></li>
-                  <li class="active">Shopping Cart</li>
+                  <h1 class="title text-center">Order Review</h1>
+
               </ol>
           </div>
           <div class="table-responsive cart_info">
@@ -22,8 +21,6 @@
                       <tr class="cart_menu">
                           <td class="image">Item</td>
                           <td class="description"></td>
-                          <td class="price">Price</td>
-                          <td class="quantity">Quantity</td>
                           <td class="total">Total</td>
                           <td></td>
                       </tr>
@@ -37,17 +34,7 @@
                           <td class="cart_description">
                               <h4><a href="">{{$item->name}}</a></h4>
 
-                          </td>
-                          <td class="cart_price">
-                              <p>${{$item->price}}</p>
-                          </td>
-                          <td class="cart_quantity">
-                              <div class="cart_quantity_button">
-                                  <a class="cart_quantity_up" href='{{ url("cart?id=$item->id&increment=1") }}'> + </a>
-                                  <input class="cart_quantity_input" type="text" name="quantity" value="{{$item->qty}}" autocomplete="off" size="2">
-                                  <a class="cart_quantity_down" href='{{ url("cart?id=$item->id&decrease=1") }}'> - </a>
-                              </div>
-                          </td>
+
                           <td class="cart_total">
                               <p class="cart_total_price">${{$item->subtotal}}</p>
                           </td>
@@ -67,17 +54,16 @@
 
   <section id="do_action">
       <div class="container">
-          <div class="heading">
-              <h3>What would you like to do next?</h3>
-
           <div class="row">
               <div class="col-sm-6">
-                  <div class="total_area">
+                  <div class="total_summary">
                       <ul>
+
+                          <h4>Shipping Cost <span>$20</span></h4>
+
                           <h3>Total <span>${{Cart::total()}}</span></h3>
                       </ul>
-                      <a class="btn btn-default update" href="{{url('clear-cart')}}">Clear Cart</a>
-                      <a class="btn btn-default check_out" href="{{url('order')}}">Order Review</a>
+                      <a class="btn btn-default check_out" href="{{ action('OrderController@order') }}"><i class="fa fa-info"></i>Proceed to payment</a>
                   </div>
               </div>
           </div>
@@ -85,4 +71,4 @@
           <br>
       </div>
   </section><!--/#do_action-->
-        @stop
+  @stop

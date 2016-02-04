@@ -13,7 +13,8 @@
 
 
         <h1><i class='fa fa-user'></i> Edit User</h1>
-        {!! Form::model(['route' => ['edit.user', $user->id], 'method' => 'PUT']) !!}
+            {!! Form::model($user, ['route' => ['edit.user', $user->id], 'method' => 'PATCH']) !!}
+
 
         <div class='form-group'>
             {!! Form::label('username', 'Username') !!}

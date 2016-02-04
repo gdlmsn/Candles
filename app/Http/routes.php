@@ -37,11 +37,13 @@ Route::get('about', 'PagesController@about');
 Route::get('products', 'ProductController@index');
 Route::get('products/create', 'ProductController@create');
 Route::get('products/{id}', 'ProductController@show');
-Route::get('products/{id} ', 'ProductController@edit');
 Route::post('products', 'ProductController@store');
-Route::post('products/{id}/edit', array('uses' => 'ProductController@update', 'as' => 'edit.product'));
+Route::get('products/{id}/', 'ProductController@edit');
+Route::patch('products/{id}', array('uses' => 'ProductController@update', 'as' => 'edit.product'));
 Route::delete('produtcs/{id} ',array('uses' => 'ProductController@destroy', 'as' => 'mamma'));
-
+//Wishlist
+Route::get('/wishlist', 'ProductController@addtowishlist');
+Route::post('wishlist', 'ProductController@addtowishlist');
 //Cart
 Route::get('/cart','CartController@cart');
 Route::post('/cart', 'CartController@cart');
@@ -57,5 +59,9 @@ Route::get('user', 'UsersController@index');
 Route::get('user/create', 'UsersController@create');
 Route::post('user', 'UsersController@store');
 Route::get('user/{id} ', 'UsersController@edit');
-Route::post('user/{id}/edit', array('uses' => 'UsersController@update', 'as' => 'edit.user'));
+Route::patch('user/{id}/edit', array('uses' => 'UsersController@update', 'as' => 'edit.user'));
 Route::delete('delete/{id} ',array('uses' => 'UsersController@destroy', 'as' => 'delete.user'));
+
+//Order
+Route::get('order', 'OrderController@index');
+Route::post('order ', 'OrderController@order');

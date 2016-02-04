@@ -23,7 +23,6 @@
       <h1 class="title text-center">Products</h1>
       <hr><br>
       <div class="row">
-
             @foreach($products as $products)
             <div class="col-sm-3">
               <div class="product-image-wrapper">

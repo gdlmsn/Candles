@@ -59,7 +59,7 @@ class CartController extends Controller
 
   public function clear_cart() {
         Cart::destroy();
-        return Redirect::away('/');
+        return Redirect::away('cart');
     }
 
     /**

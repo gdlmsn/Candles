@@ -54,14 +54,14 @@
 
           <thead>
               <tr>
-                  <th>Username</th>
-                  <th>Email</th>
-                  <th>Date/Time Added</th>
-                  <th>Actions</th>
-                  <th>Actions</th>
-                  <th>Actions</th>
-                  <th>Actions</th>
-                  <th>Actions</th>
+                  <th>Name</th>
+                  <th>Stock</th>
+                  <th>Price</th>
+                  <th>Special</th>
+                  <th>Weight</th>
+
+                  <th>Description</th>
+                  <th>Edit/Delete</th>
               </tr>
           </thead>
 
@@ -73,7 +73,6 @@
                 <td>{{ $product->price }}</td>
                 <td>{{ $product->special_price }}</td>
                 <td>{{ $product->weight }}</td>
-                <td>{{ $product->size }}</td>
                 <td>{{ $product->description }}</td>
 
                         <td>
@@ -90,7 +89,7 @@
       </table>
   </div>
 
-  <a href="/products/create" class="btn btn-success pull-right">Add User</a><br>
+  <a href="/products/create" class="btn btn-success pull-right">Add Product</a><br>
 <br>
 <br>
 </div>

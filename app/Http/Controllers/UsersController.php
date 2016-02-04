@@ -90,6 +90,8 @@ class UsersController extends Controller
       return view ('user.edit', compact('user'));
     }
 
+
+
     public function update(Request $request, $id)
     {
       $this->validate($request, [ 'username' => 'required|max:255|min:4|unique:users',
@@ -103,8 +105,10 @@ class UsersController extends Controller
       $user->password = Hash::make(Input::get('password'));
       $user->save();
 
-      return redirect ('user.index');
+      return redirect ('/user');
     }
+
+    
 
     /**
      * Remove the specified resource from storage.

@@ -13,7 +13,7 @@
 
 
         <h1><i class='fa fa-user'></i> Edit Product</h1>
-        {!! Form::model(['route' => ['edit.product', $product->id], 'method' => 'PUT']) !!}
+        {!! Form::model($product, ['route' => ['edit.product', $product->id], 'method' => 'PATCH']) !!}
 
         <div class='form-group'>
             {!! Form::label('name', 'Name') !!}
@@ -21,31 +21,31 @@
         </div>
 
         <div class='form-group'>
-            {!! Form::label('stock', 'stock') !!}
+            {!! Form::label('stock', 'Stock') !!}
             {!! Form::stock('stock', null, ['placeholder' => 'Stock', 'class' => 'form-control']) !!}
         </div>
 
         <div class='form-group'>
-            {!! Form::label('price', 'price') !!}
-            {!! Form::price('price', null,  ['placeholder' => 'price', 'class' => 'form-control']) !!}
+            {!! Form::label('price', 'Price') !!}
+            {!! Form::price('price', null,  ['placeholder' => 'Price', 'class' => 'form-control']) !!}
         </div>
 
         <div class='form-group'>
-            {!! Form::label('special_price', 'special_price') !!}
-            {!! Form::price('special_price', null,  ['placeholder' => 'special_price', 'class' => 'form-control']) !!}
+            {!! Form::label('special_price', 'Special Price') !!}
+            {!! Form::price('special_price', null,  ['placeholder' => 'Special Price', 'class' => 'form-control']) !!}
         </div>
 
         <div class='form-group'>
-            {!! Form::label('weight', 'weight') !!}
-            {!! Form::price('weight', null,  ['placeholder' => 'weight', 'class' => 'form-control']) !!}
+            {!! Form::label('weight', 'Weight') !!}
+            {!! Form::price('weight', null,  ['placeholder' => 'Weight', 'class' => 'form-control']) !!}
         </div>
         <div class='form-group'>
-            {!! Form::label('size', 'size') !!}
-            {!! Form::price('size', null,  ['placeholder' => 'size', 'class' => 'form-control']) !!}
+            {!! Form::label('size', 'Size') !!}
+            {!! Form::price('size', null,  ['placeholder' => 'Size', 'class' => 'form-control']) !!}
         </div>
         <div class='form-group'>
             {!! Form::label('description', 'description') !!}
-            {!! Form::price('description', null,  ['placeholder' => 'description', 'class' => 'form-control']) !!}
+            {!! Form::price('description', null,  ['placeholder' => 'Description', 'class' => 'form-control']) !!}
         </div>
 
 

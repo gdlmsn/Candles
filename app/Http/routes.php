@@ -55,7 +55,7 @@ Route::get('search-products', 'SearchController@index');
 
 //Admin
 
-Route::get('user', 'UsersController@index');
+Route::get('user', ['middleware' => ['auth', 'admin'], 'uses' => 'UsersController@index']);
 Route::get('user/create', 'UsersController@create');
 Route::post('user', 'UsersController@store');
 Route::get('user/{id} ', 'UsersController@edit');

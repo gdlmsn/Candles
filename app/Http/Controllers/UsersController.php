@@ -16,45 +16,19 @@ use Redirect;
 
 class UsersController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
-    //  public function getFullName()
-	  // {
-		//     return $this->username;
-	  // }
-    //
-    //  public function __construct()
-	  //   {
-		//       $this->beforeFilter('auth');
-	  //  }
-
+    
     public function index()
-    {   $products = Product::all();
+    {
+       $products = Product::all();
         $users = User::all();
         return view ('user.index',compact('users', 'products'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
       return view('user.create');
-
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
      public function store(Request $request)
      {
        $this->validate($request, [  'username' => 'required|max:255|min:4|unique:users',
@@ -69,15 +43,8 @@ class UsersController extends Controller
        $user->save();
 
        return redirect ('/user');
+
      }
-
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
 
     public function show($id)
     {
@@ -108,14 +75,6 @@ class UsersController extends Controller
       return redirect ('/user');
     }
 
-    
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
       User::destroy($id);

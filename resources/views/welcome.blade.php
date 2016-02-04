@@ -50,15 +50,16 @@
 
 <!--THUMBNAIL SECTION-->
 <div class="bs-example" data-example-id="thumbnails-with-custom-content">
+  <br>
   <h2 class="title text-center">Some of our relaxing products</h2>
+  <br>
    <div class="row">
      <div class="col-xs-4 col-sm-4 col-md-4">
        <div class="thumbnail th1">
          <a href="{{ action("ProductController@index") }}">
            {!! Html::image('img/01-main1.png') !!}
           <div class="caption">
-            <h3>Soy</h3>
-            <h3>Tealight Candle</h3>
+            <h4>Bamboo Oil burner</h4>
             <hr/>
             <p>20$</p>
             </a>
@@ -70,8 +71,7 @@
         <a href="{{ action("ProductController@index") }}">
           {!! Html::image('img/01-main1.png') !!}
          <div class="caption">
-           <h3>Soy</h3>
-           <h3>Tealight Candle</h3>
+           <h4>Soy Tealight Candle</h4>
            <hr/>
            <p>23$</p>
           </a>
@@ -84,8 +84,7 @@
         <a href="{{ action("ProductController@index") }}">
          {!! Html::image('img/01-main1.png') !!}
          <div class="caption">
-            <h3>Soy</h3>
-            <h3>Tealight Candle</h3>
+            <h4>Glass hurricane vase</h4>
             <hr/>
             <p>22$</p>
             </a>
@@ -98,7 +97,7 @@
 
       <!--CARE SECTION-->
       <div class="jumbotron jumbotron-fluid jumbo">
-        <div class="container-fluid ">
+        <div class="container ">
           <h2 class="title text-center">Products Care</h2>
             <p>Please follow these simple steps to ensure that you make the most of your LUKA candle each and every time.</p>
             <p>Step1, Trim the wick to 2mm before each use.</p>
@@ -116,7 +115,10 @@
 
    {!! Html::image('img/02-thumb.png') !!}
  </div>
-  <p class="lead">
+ <div class="jumbotron jumbotron-fluid jumbo">
+   <div class="container ">
+     <h2 class="title text-center">About Luka Candles</h2>
+  <p >
       LUKA candles are a luxurious and personal expression of Chloe's appreciation of the therapeutic and mood altering properties of essential oils and certain fragrances,
        the effects of which are further enhanced by the ambient warm glow of candlelight. Every divinely distinctive Luka candle is made of 100% pure eco soy wax which is
        scented with premium quality fragrance oils sourced from around the world to create a unique and blissful sensory experience.
@@ -124,6 +126,7 @@
        Whether your desire is to relax and rejuvenate the senses, to set the mood, create energy, calm or passion or to increase sensuality, LUKA candles can do all
        this while simultaneously making a perfect decorator addition to any room in your home.
   </p>
+</div>
 </div>
 
 @stop

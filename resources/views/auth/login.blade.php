@@ -3,7 +3,7 @@
 
     @section('content')
       <div class="container-fluid">
-      
+
         <h1 class="title text-center">Login</h1>
         <hr>
 
@@ -34,10 +34,12 @@
                  <div class='bg-danger alert'>{{ $error }}</div>
              @endforeach
              @endif
-          </hr>
+          <br>
             <div class="non-member">
-            <a href="{{ action("Auth\AuthController@getRegister") }}">Not a member? Sign-up!</a>
+            <a href="{{ action("Auth\AuthController@getRegister") }}" class="btn btn-info pull-left" style="margin-right: 3px;">Not a member? Sign-up!</a>
             </div>
+            <br><br>
+            <br><br>
         </div>
       </div>
     </div>

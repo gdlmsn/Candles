@@ -53,7 +53,8 @@ Route::post('/cart-remove-item', 'CartController@cart_remove_item');
 
 //Search
 Route::get('search-products', 'SearchController@index');
-
+Route::get('usearch','SearchController@searchusers');
+Route::get('psearch','SearchController@searchproducts');
 //Admin
 
 Route::get('user', ['middleware' => ['auth', 'admin'], 'uses' => 'UsersController@index']);

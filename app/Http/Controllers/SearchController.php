@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Input;
+use App\User;
 use App\Product;
 use Response;
 use App\Http\Requests;
@@ -46,14 +47,34 @@ class SearchController extends Controller
 	    return view('products.index',compact('products'));
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function searchusers()
     {
-        //
+      $query = \Request::get('q-admin');
+
+      $users = User::where('username','like','%'.$query.'%')
+
+      ->paginate(10);
+
+
+      return view('user.usearch',compact('users'));
+    }
+
+    public function searchproducts()
+    {
+      $query = \Request::get('q-p-admin');
+
+      $products = Product::where('name','like','%'.$query.'%')
+
+      ->paginate(10);
+
+
+      return view('user.psearch',compact('products'));
     }
 
     /**

@@ -57,7 +57,7 @@
           </div>
           {!! Form::close() !!}
           </div>
-          
+
           <div class="col-md-4">
           @if ($errors->has())
            @foreach ($errors->all() as $error)

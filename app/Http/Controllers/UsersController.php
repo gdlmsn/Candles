@@ -42,7 +42,7 @@ class UsersController extends Controller
        $user->password = Hash::make(Input::get('password'));
        $user->save();
 
-       return redirect ('/user');
+       return redirect ('usearch');
 
      }
 

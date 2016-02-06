@@ -24,7 +24,12 @@
       <hr><br>
       <div class="row">
         @if (count($products) === 0)
+
+
         echo   <h1 class="title text-center">Stronzo</h1>;
+
+
+
          @elseif (count($products) >= 1)
             @foreach($products as $products)
             <div class="col-sm-3">

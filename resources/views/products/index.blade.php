@@ -23,6 +23,9 @@
       <h1 class="title text-center">Products</h1>
       <hr><br>
       <div class="row">
+        @if (count($products) === 0)
+        echo   <h1 class="title text-center">Stronzo</h1>;
+         @elseif (count($products) >= 1)
             @foreach($products as $products)
             <div class="col-sm-3">
               <div class="product-image-wrapper">
@@ -47,6 +50,7 @@
               </div>
             </div>
           @endforeach
+          @endif
         </div>
       </div>
     @stop

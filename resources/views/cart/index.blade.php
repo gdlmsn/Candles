@@ -57,7 +57,8 @@
                       </tr>
                       @endforeach
                       @else
-                  <p>You have no items in the shopping cart</p>
+                  <h4>You have no items in the shopping cart</h4>
+                  <br><br><br>
                   @endif
                   </tbody>
               </table>
@@ -67,17 +68,16 @@
 
   <section id="do_action">
       <div class="container">
-          <div class="heading">
-              <h3>What would you like to do next?</h3>
-
           <div class="row">
               <div class="col-sm-6">
+                <hr>
                   <div class="total_area">
                       <ul>
                           <h3>Total <span>${{Cart::total()}}</span></h3>
                       </ul>
+                      <br>
                       <a class="btn btn-default update" href="{{url('clear-cart')}}">Clear Cart</a>
-                      <a class="btn btn-default check_out" href="{{url('order')}}">Order Review</a>
+                      <a class="btn btn-default check_out" href="{{url('order')}}">Place Order</a>
                   </div>
               </div>
           </div>

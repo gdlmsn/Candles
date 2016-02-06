@@ -65,4 +65,4 @@ Route::delete('delete/{id} ',array('uses' => 'UsersController@destroy', 'as' => 
 
 //Order
 Route::get('order', 'OrderController@index');
-Route::post('order ', 'OrderController@order');
+Route::post('proceed-to-payment', 'OrderController@order');

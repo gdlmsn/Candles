@@ -22,13 +22,13 @@ class OrderController extends Controller
 
     public function order()
     {
-        $cart = Cart::content();
-        $cart = new Order;
-        $cart->order_id=$order_id;
-        $cart->$product_id= $product->id;
-        $cart->save();
 
-        return 'culo';
+      if (Request::isMethod('post')) {
+          $cart = Cart::content();
+          Order::add(array('order_id' => $order_id, 'product_id' => $product->product_id, 'subtotal_price' => $cart->subtotal_price));
+          $order->save();
+        return '/';
+      }
     }
 
 

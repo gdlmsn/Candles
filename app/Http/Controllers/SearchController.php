@@ -40,8 +40,7 @@ class SearchController extends Controller
       // if(!$query && $query == '') return Response::json(array(), 400);
 
       $products = Product::where('name','like','%'.$query.'%')
-			->orderBy('name','asc')
-			->take(5);
+			->paginate(10);
 
 
 	    return view('products.index',compact('products'));

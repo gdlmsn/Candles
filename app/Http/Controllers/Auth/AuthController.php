@@ -5,6 +5,7 @@ use Illuminate\Contracts\Auth\Guard;
 use Input;
 use Hash;
 use Auth;
+use Session;
 use Validator;
 use App\Http\Requests;
 use Illuminate\Http\Request;
@@ -106,12 +107,11 @@ class AuthController extends Controller
         return view ('auth.login', compact('theUsername'));
     }
 
-    // public function logout() {
-    //         Auth::logout();
-    //
-    //         return Redirect::away('welcome');
-    //     }
-
+    public function getLogout(){
+          Auth::logout();
+          Session::flush();
+          return Redirect::to('/');
+      }
 
 
 

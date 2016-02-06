@@ -30,17 +30,12 @@
                   <div class="productinfo text-center">
                     <div class="thumbnail th1">
                       {!! Html::image('img/01-main1.png') !!}
-                      <div class="clearfix">
-                      <div class="btn-group inline" data-toggle="buttons-checkbox">
-                            <a href="{{ action('ProductController@show',[$products->id]) }}" class="btn btn-info"></i>Details</a>
-                            <form method="POST" action="{{url('cart')}}">
+                        <a href="{{ action('ProductController@show',[$products->id]) }}"><i class="fa fa-info"></i>Product Details</a>
+                          <form method="POST" action="{{url('cart')}}">
                             <input type="hidden" name="id" value="{{$products->id}}">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                            <br>
-                            <button type="submit" class="btn btn-success "></i>Add to cart</button>
+                            <button type="submit" class="btn btn-fefault add-to-cart"><i class="fa fa-shopping-cart"></i>Add to cart</button>
                           </form>
-                          </div>
-                        </div>
                           <div class="caption">
                             <p>{{ $products->name }}</p>
                             <hr/>

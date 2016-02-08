@@ -63,12 +63,7 @@
 
           </h5>
 
-          <h4>Fragrances</h4>
 
-          <select class="form-control">
-
-          <option></option>
-          </select>
 
 
           <div class="row">
@@ -91,7 +86,6 @@
         </div>
         <hr/>
         <h5><a href="#">Add to wish list</a></h5>
-        <h5><a href="#">Share</a></h5>
         </div>
 
       </div>

@@ -53,10 +53,10 @@ class SearchController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function searchusers()
+    public function search()
     {
       $query = \Request::get('q-admin');
-
+      $users = User::where('id','like','%'.$query.'%')and
       $users = User::where('username','like','%'.$query.'%')
 
       ->paginate(10);

@@ -39,7 +39,7 @@ Route::get('products', 'ProductController@index');
 Route::get('products/create', 'ProductController@create');
 Route::get('products/{id}', 'ProductController@show');
 Route::post('products', 'ProductController@store');
-Route::get('/products/{id}/', 'ProductController@edit');
+Route::get('/products/{id}/edit', 'ProductController@edit');
 Route::patch('/products/{id}', array('uses' => 'ProductController@update', 'as' => 'edit.product'));
 Route::delete('produtcs/{id} ',array('uses' => 'ProductController@destroy', 'as' => 'mamma'));
 //Wishlist
@@ -53,8 +53,8 @@ Route::post('/cart-remove-item', 'CartController@cart_remove_item');
 
 //Search
 Route::get('search-products', 'SearchController@index');
-Route::get('usearch','SearchController@searchusers');
-Route::get('psearch','SearchController@searchproducts');
+Route::get('admin-search','SearchController@search');
+//Route::get('psearch','SearchController@searchproducts');
 //Admin
 
 Route::get('user', ['middleware' => ['auth', 'admin'], 'uses' => 'UsersController@index']);

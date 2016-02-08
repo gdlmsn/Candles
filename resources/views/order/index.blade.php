@@ -9,11 +9,9 @@
         <section id="cart_items">
       <div class="container">
           <div class="xsa">
-              <ol class="breadcrumb">
-                  <h1 class="title text-center">Order Review</h1>
 
-              </ol>
-          </div>
+                  <h1 class="title text-center">Order Review</h1>
+              </div>
           <div class="table-responsive cart_info">
               @if(count($cart))
               <table class="table table-condensed">

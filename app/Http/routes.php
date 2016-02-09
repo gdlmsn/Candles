@@ -20,7 +20,6 @@ Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
-
 // Registration
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
@@ -41,20 +40,20 @@ Route::get('products/{id}', 'ProductController@show');
 Route::post('products', 'ProductController@store');
 Route::get('/products/{id}/edit', 'ProductController@edit');
 Route::patch('/products/{id}', array('uses' => 'ProductController@update', 'as' => 'edit.product'));
-Route::delete('produtcs/{id} ',array('uses' => 'ProductController@destroy', 'as' => 'mamma'));
+Route::delete('produtcs/{id} ', array('uses' => 'ProductController@destroy', 'as' => 'mamma'));
 //Wishlist
 Route::get('/wishlist', 'ProductController@addtowishlist');
 Route::post('wishlist', 'ProductController@addtowishlist');
 //Cart
-Route::get('/cart','CartController@cart');
+Route::get('/cart', 'CartController@cart');
 Route::post('/cart', 'CartController@cart');
 Route::get('/clear-cart', 'CartController@clear_cart');
-Route::post('/cart-remove-item', 'CartController@cart_remove_item');
+//Edit this
+Route::delete('cart/{id} ', array('uses' => 'CartController@removeItem', 'as' => 'delete.item'));
 
 //Search
 Route::get('search-products', 'SearchController@index');
-Route::get('admin-search','SearchController@search');
-//Route::get('psearch','SearchController@searchproducts');
+Route::get('admin-search', 'SearchController@search');
 //Admin
 
 Route::get('user', ['middleware' => ['auth', 'admin'], 'uses' => 'UsersController@index']);
@@ -62,7 +61,7 @@ Route::get('user/create', 'UsersController@create');
 Route::post('user', 'UsersController@store');
 Route::get('user/{id} ', 'UsersController@edit');
 Route::patch('user/{id}/edit', array('uses' => 'UsersController@update', 'as' => 'edit.user'));
-Route::delete('delete/{id} ',array('uses' => 'UsersController@destroy', 'as' => 'delete.user'));
+Route::delete('delete/{id} ', array('uses' => 'UsersController@destroy', 'as' => 'delete.user'));
 
 //Order
 Route::get('order', 'OrderController@index');

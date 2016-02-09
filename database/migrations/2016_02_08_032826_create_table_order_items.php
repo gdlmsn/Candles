@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTableCartsItem extends Migration
+class CreateTableOrderItems extends Migration
 {
     /**
      * Run the migrations.

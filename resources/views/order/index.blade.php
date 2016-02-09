@@ -56,7 +56,7 @@
 
                   <div class="total_summary pull-right">
                     <ul>
-                      <h4>Delivery Cost <span>$20</span></h4>
+                      <h4>Delivery Cost: <span>Free</span></h4>
                       <h4>Total <span>${{Cart::total()}}</span></h4>
                       <form method="POST" action="{{ url('proceed-to-payment') }}">
                         <input type="hidden" name="id" value="{{$cart}}">

@@ -44,7 +44,6 @@ class SearchController extends Controller
 			->paginate(10);
 
 
-	    return view('products.index',compact('products'));
     }
 
 
@@ -55,15 +54,25 @@ class SearchController extends Controller
      */
     public function search()
     {
+       if (Input::has('q-admin')){
       $query = \Request::get('q-admin');
-      $users = User::where('id','like','%'.$query.'%')and
       $users = User::where('username','like','%'.$query.'%')
-
       ->paginate(10);
 
-
       return view('user.usearch',compact('users'));
+      }elseif (Input::has('q-p-admin')) {
+       $query = \Request::get('q-p-admin');
+       $products = Product::where('name','like','%'.$query.'%')
+      ->paginate(10);
+
+      return view('user.psearch',compact('products'));
+
+      }
     }
+
+
+
+
 
     public function searchproducts()
     {

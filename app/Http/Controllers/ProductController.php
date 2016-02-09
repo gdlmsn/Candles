@@ -51,7 +51,7 @@ class ProductController extends Controller
       $product->size = Input::get('size');
       $product->description = Input::get('description');
       $product->save();
-      return redirect ('products');
+      return redirect ('user');
     }
 
 

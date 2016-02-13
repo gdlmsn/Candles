@@ -24,13 +24,13 @@ class ProductController extends Controller
     $products = Product::all();
     return view('products.index', compact('products'));
     }
-      //**********************DISPLAY ALL FRAGRANCES IN show.blade.php************************************
-    //
-    // public function display(){
-    //
-    //    $pt = Fragrance::all();
-    //    return view('products.show', compact('pt'));
-    //  }
+
+    // public function showimage($id){
+    // $products = DB::table('products')->where('id', $id)->first();
+    // $response['image'] =$pr->img;//blob file
+    // $response['type']=$pr->image_type;
+    // return View::make('products.index', compact('response'));
+    // }
 
     public function create()
     {

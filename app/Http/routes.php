@@ -35,6 +35,7 @@ Route::get('about', 'PagesController@about');
 
 //Poducts
 Route::get('products', 'ProductController@index');
+// Route::get('products', 'ProductController@showimage');
 Route::get('products/create', 'ProductController@create');
 Route::get('products/{id}', 'ProductController@show');
 Route::post('products', 'ProductController@store');
@@ -50,6 +51,8 @@ Route::post('/cart', 'CartController@cart');
 Route::get('/clear-cart', 'CartController@clear_cart');
 //Edit this
 Route::delete('cart/{id} ', array('uses' => 'CartController@removeItem', 'as' => 'delete.item'));
+
+
 
 //Search
 Route::get('search-products', 'SearchController@index');

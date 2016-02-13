@@ -27,8 +27,8 @@ class CartController extends Controller
             $product = Product::find($id);
             Cart::add(array('id' => $id, 'name' => $product->name, 'qty' => 1, 'price' => $product->price));
 
+      //Increase
 
-      //Decrease
       if (Request::get('id') && (Request::get('increment')) == 1) {
           $rowId = Cart::search(array('id' => Request::get('id')));
           $item = Cart::get($rowId[0]);
@@ -36,7 +36,7 @@ class CartController extends Controller
           Cart::update($rowId[0], $item->qty + 1);
       }
 
-      //Increase
+  //Decrease
        if (Request::get('id') && (Request::get('decrease')) == 1) {
            $rowId = Cart::search(array('id' => Request::get('id')));
            $item = Cart::get($rowId[0]);
@@ -68,13 +68,13 @@ class CartController extends Controller
     public function removeItem($rowId)
     {
         $cart = Cart::content();
-      echo "\n hhh ".$cart;
+      // echo "\n hhh ".$cart;
         if ($rowId != null) {
-          //Cart::remove(trim($rowId));
+          Cart::remove(trim($rowId));
 
 
         }
-        // return Redirect::away('/');
+        return Redirect::away('/');
 
     }
 }

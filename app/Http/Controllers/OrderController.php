@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 use Auth;
 use Illuminate\Support\Facades\Redirect;
 use Cart;
-use App\Order;
-use App\Orders;
+use App\Checkout;
+use App\Checkout_Items;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -24,11 +24,23 @@ class OrderController extends Controller
     {
 
           $cart = Cart::content();
-          $order_id = Order::get('id');
-          $product = Product::find($id);
-          Order::add(['order_id' => $order_id, 'product_id' => $product->product_id]);
-          $order->save();
-        return '/';
+          $total = Cart::total();
+          $orders = new Checkout;
+          $orders->subtotal = $total;
+          $orders->save();
+          $orderid = Checkout::all()->last()->order_id;
+          // echo $cart;
+
+          foreach ($cart as $item) {
+            // echo $item;
+            $checkout_item = new Checkout_Items;
+            $checkout_item->order_id = $orderid;
+            $checkout_item->product_id = $item->id;
+            $checkout_item->qty = $item->qty;
+            $checkout_item->save();
+
+          }
+          Cart::destroy();
     }
 
 

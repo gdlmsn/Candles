@@ -44,17 +44,16 @@ Route::patch('/products/{id}', array('uses' => 'ProductController@update', 'as' 
 Route::delete('produtcs/{id} ', array('uses' => 'ProductController@destroy', 'as' => 'mamma'));
 
 //Wishlist
-Route::get('/wishlist', 'ProductController@addtowishlist');
-Route::post('wishlist', 'ProductController@addtowishlist');
+Route::get('/wishlist', 'WishListController@index');
+Route::post('/wishlist', 'WishListController@index');
+Route::get('/clear-wish', 'WishListController@clear_wish');
+Route::delete('cart/{id} ', array('uses' => 'WishListController@removeWish', 'as' => 'delete.item'));
 
 //Cart
 Route::get('/cart', 'CartController@cart');
 Route::post('/cart', 'CartController@cart');
 Route::get('/clear-cart', 'CartController@clear_cart');
-//Edit this
 Route::delete('cart/{id} ', array('uses' => 'CartController@removeItem', 'as' => 'delete.item'));
-
-
 
 //Search
 Route::get('search-products', 'SearchController@index');

@@ -44,6 +44,13 @@
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <button type="submit" class="btn btn-success add-to-cart"></i>Add to cart</button>
                           </form>
+                          <br>
+                          <form method="POST" action="{{url('wishlist')}}">
+                            <input type="hidden" name="id" value="{{$products->id}}">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <button type="submit" class="btn btn-info add-to-cart"></i>Add to WishList</button>
+                          </form>
+
                           <div class="caption">
                             <p>{{ $products->name }}</p>
                             <hr/>

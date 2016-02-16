@@ -44,6 +44,8 @@ class UsersController extends Controller
        $user->password = Hash::make(Input::get('password'));
        $user->save();
 
+       \Session::flash('flash_message', 'User Successfully created!');
+
        return redirect ('user');
 
      }
@@ -75,6 +77,7 @@ class UsersController extends Controller
       $user->password = Hash::make(Input::get('password'));
       $user->save();
 
+      \Session::flash('flash_message', 'User Successfully updated!');
       return redirect ('/user');
     }
 

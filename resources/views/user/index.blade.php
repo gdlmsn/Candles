@@ -149,7 +149,6 @@
                   <th>Order ID</th>
                   <th>Product ID</th>
                   <th>Quantity</th>
-                  <th>Details</th>
 
               </tr>
           </thead>
@@ -160,10 +159,6 @@
                 <td>{{ $checkout_item->order_id }}</td>
                 <td>{{ $checkout_item->product_id }}</td>
                 <td>{{ $checkout_item->qty}}</td>
-                          <td>
-                            <a href="" class="btn btn-info pull-left" style="margin-right: 3px;">Details</a>
-
-                        </td>
               </tr>
               @endforeach
           </tbody>

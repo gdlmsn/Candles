@@ -43,9 +43,9 @@
                           </td>
                           <td class="cart_quantity">
                              <div class="cart_quantity_button">
-                                 <a class="cart_quantity_up" href='{{ url("cart?product_id=$item->id&increment=1") }}'> + </a>
+                                 <!-- <a class="cart_quantity_up" href='{{ url("cart?product_id=$item->id&increment=1") }}'> + </a> -->
                                  <input class="cart_quantity_input" type="text" name="quantity" value="{{$item->qty}}" autocomplete="off" size="2">
-                                 <a class="cart_quantity_down" href='{{ url("cart?product_id=$item->id&decrease=1") }}'> - </a>
+                                 <!-- <a class="cart_quantity_down" href='{{ url("cart?product_id=$item->id&decrease=1") }}'> - </a> -->
                              </div>
                          </td>
                           <td class="cart_total">
@@ -78,8 +78,17 @@
                           <h3>Total <span>${{Cart::total()}}</span></h3>
                       </ul>
                       <br>
-                      <a class="btn btn-default update" href="{{url('clear-cart')}}">Clear Cart</a>
-                      <a class="btn btn-default check_out" href="{{url('order')}}">Place Order</a>
+                      @if (count($cart) === 0)
+                        <a class="btn btn-warning update" href="{{url('clear-cart')}}" disabled>Clear Cart</a>
+                        @elseif (count($cart) >=1 )
+                          <a class="btn btn-warning update" href="{{url('clear-cart')}}">Clear Cart</a>
+                          @endif
+
+                      @if (count($cart) === 0)
+                        <a class="btn btn-success check_out" href="{{url('order')}}" disabled>Place Order</a>
+                        @elseif (count($cart) >=1 )
+                          <a class="btn btn-success check_out" href="{{url('order')}}">Place Order</a>
+                          @endif
                   </div>
               </div>
           </div>

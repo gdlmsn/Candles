@@ -19,6 +19,8 @@ class SearchController extends Controller
       // if(!$query && $query == '') return Response::json(array(), 400);
       $products = Product::where('name','like','%'.$query.'%')
 			->paginate(10);
+
+      return view('products.index',compact('products'));
     }
 
     public function search()

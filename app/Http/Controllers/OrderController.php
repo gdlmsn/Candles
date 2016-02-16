@@ -44,7 +44,7 @@ class OrderController extends Controller
         Cart::destroy();
 
         \Session::flash('flash_message', 'Your order has been placed successfully!');
-        
+
           return redirect('/');
     }
 

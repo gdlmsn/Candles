@@ -61,7 +61,7 @@
                       <form method="POST" action="{{ url('proceed-to-payment') }}">
                         <input type="hidden" name="id" value="{{$cart}}">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <button type="submit" class="btn btn-fefault add-to-cart"><i class="fa fa-shopping-cart"></i>Proceed to payment</button>
+                        <button type="submit" class="btn btn-success add-to-cart"><i class="fa fa-shopping-cart"></i>Confirm Order</button>
                       </form>
                     </ul>
                   </div>

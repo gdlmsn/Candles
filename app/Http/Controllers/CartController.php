@@ -24,18 +24,18 @@ class CartController extends Controller
 
       //Increase
 
-      if (Request::get('id') && (Request::get('increment')) == 1) {
-          $rowId = Cart::search(array('id' => Request::get('id')));
-          $item = Cart::get($rowId[0]);
-          Cart::update($rowId[0], $item->qty + 1);
-      }
+      // if (Request::get('id') && (Request::get('increment')) == 1) {
+      //     $rowId = Cart::search(array('id' => Request::get('id')));
+      //     $item = Cart::get($rowId);
+      //     Cart::update($rowId, $item->qty + 1);
+      // }
 
-      //Decrease
-       if (Request::get('id') && (Request::get('decrease')) == 1) {
-           $rowId = Cart::search(array('id' => Request::get('id')));
-           $item = Cart::get($rowId[0]);
-           Cart::update($rowId[0], $item->qty - 1);
-       }
+      // //Decrease
+      //  if (Request::get('id') && (Request::get('decrease')) == 1) {
+      //      $rowId = Cart::search(array('id' => Request::get('id')));
+      //      $item = Cart::get($rowId);
+      //      Cart::update($rowId, $item->qty - 1);
+      //  }
 
             $cart = Cart::content();
 

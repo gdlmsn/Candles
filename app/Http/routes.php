@@ -42,9 +42,11 @@ Route::post('products', 'ProductController@store');
 Route::get('/products/{id}/edit', 'ProductController@edit');
 Route::patch('/products/{id}', array('uses' => 'ProductController@update', 'as' => 'edit.product'));
 Route::delete('produtcs/{id} ', array('uses' => 'ProductController@destroy', 'as' => 'mamma'));
+
 //Wishlist
 Route::get('/wishlist', 'ProductController@addtowishlist');
 Route::post('wishlist', 'ProductController@addtowishlist');
+
 //Cart
 Route::get('/cart', 'CartController@cart');
 Route::post('/cart', 'CartController@cart');

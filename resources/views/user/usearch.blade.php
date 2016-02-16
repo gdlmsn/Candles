@@ -16,6 +16,7 @@
 
             <thead>
                 <tr>
+                    <th>ID</th>
                     <th>Username</th>
                     <th>Email</th>
                     <th>Date/Time Added</th>
@@ -32,6 +33,7 @@
 
                 @foreach ($users as $user)
                 <tr>
+                    <td>{{ $user->id }}</td>
                     <td>{{ $user->username }}</td>
                     <td>{{ $user->email }}</td>
                     <td>{{ $user->created_at->format('F d, Y h:ia') }}</td>

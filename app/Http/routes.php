@@ -57,8 +57,8 @@ Route::delete('cart/{id} ', array('uses' => 'CartController@removeItem', 'as' =>
 //Search
 Route::get('search-products', 'SearchController@index');
 Route::get('admin-search', 'SearchController@search');
-//Admin
 
+//Admin
 Route::get('user', ['middleware' => ['auth', 'admin'], 'uses' => 'UsersController@index']);
 Route::get('user/create', 'UsersController@create');
 Route::post('user', 'UsersController@store');

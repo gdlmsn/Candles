@@ -11,26 +11,12 @@ use App\Http\Controllers\Controller;
 
 class ProductController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-
-
-
     public function index()
     {
     $products = Product::all();
+    
     return view('products.index', compact('products'));
     }
-
-    // public function showimage($id){
-    // $products = DB::table('products')->where('id', $id)->first();
-    // $response['image'] =$pr->img;//blob file
-    // $response['type']=$pr->image_type;
-    // return View::make('products.index', compact('response'));
-    // }
 
     public function create()
     {
@@ -75,7 +61,6 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
       $product = Product::findOrFail($id);
-
       $product->name = Input::get('username');
       $product->stock = Input::get('stock');
       $product->price = Input::get('price');
@@ -83,28 +68,11 @@ class ProductController extends Controller
       $product->weight = Input::get('weight');
       $product->size = Input::get('size');
       $product->description = Input::get('description');
-
       $product->save();
 
       return redirect ('/user');
-
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
       Product::destroy($id);

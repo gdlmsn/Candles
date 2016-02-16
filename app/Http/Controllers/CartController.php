@@ -10,11 +10,6 @@ use App\Product;
 
 class CartController extends Controller
 {
-    /**
-      * Display a listing of the resource.
-      *
-      * @return \Illuminate\Http\Response
-      */
      public function __construct()
      {
          $this->middleware('auth');
@@ -32,15 +27,13 @@ class CartController extends Controller
       if (Request::get('id') && (Request::get('increment')) == 1) {
           $rowId = Cart::search(array('id' => Request::get('id')));
           $item = Cart::get($rowId[0]);
-
           Cart::update($rowId[0], $item->qty + 1);
       }
 
-  //Decrease
+      //Decrease
        if (Request::get('id') && (Request::get('decrease')) == 1) {
            $rowId = Cart::search(array('id' => Request::get('id')));
            $item = Cart::get($rowId[0]);
-
            Cart::update($rowId[0], $item->qty - 1);
        }
 
@@ -56,14 +49,8 @@ class CartController extends Controller
     public function clear_cart()
     {
         Cart::destroy();
-
         return Redirect::away('cart');
     }
-
-    // public function destroy($id)
-    // {
-    //     Cart::destroy();
-    // }
 
     public function removeItem($rowId)
     {
@@ -71,10 +58,7 @@ class CartController extends Controller
       // echo "\n hhh ".$cart;
         if ($rowId != null) {
           Cart::remove(trim($rowId));
-
-
         }
-        return Redirect::away('/');
-
+        return redirect('cart');
     }
 }

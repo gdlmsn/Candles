@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Checkout;
+use App\Checkout_Items;
 use App\Product;
 use DB;
 use Input;
@@ -16,12 +17,13 @@ use Redirect;
 
 class UsersController extends Controller
 {
-
     public function index()
     {
        $products = Product::all();
-        $users = User::all();
-        return view ('user.index',compact('users', 'products'));
+       $users = User::all();
+       $checkouts = Checkout::all();
+       $checkout_items = Checkout_Items::all();
+        return view ('user.index',compact('users', 'products','checkouts', 'checkout_items'));
     }
 
     public function create()
@@ -54,6 +56,7 @@ class UsersController extends Controller
     public function edit($id)
     {
       $user = User::find($id);
+
       return view ('user.edit', compact('user'));
     }
 
@@ -65,8 +68,8 @@ class UsersController extends Controller
                                   'email' => 'required|email|max:255|unique:users',
                                   'password' => 'required|confirmed|min:6'
                                 ]);
-      $user = User::findOrFail($id);
 
+      $user = User::findOrFail($id);
       $user->username = Input::get('username');
       $user->email = Input::get('email');
       $user->password = Hash::make(Input::get('password'));
@@ -81,7 +84,4 @@ class UsersController extends Controller
 
 		  return redirect ('/user');
     }
-
-
-
 }
